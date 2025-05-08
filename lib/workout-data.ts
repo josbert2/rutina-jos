@@ -11,511 +11,522 @@ export const workoutData: WorkoutData = {
       {
         name: "PECHO",
         muscleGroup: "chest",
-        exercises: [
+        "exercises": [
           {
-            name: "Press de banca con mancuernas",
-            sets: "4 x 8‑12",
-            rest: "90s",
-            notes: "Compuesto principal",
-            type: "Compuesto",
-            imageUrl: "https://www.cambiatufisico.com/wp-content/uploads/remo-mancuerna-1.jpg",
+            "name": "Press de banca plano con mancuernas",
+            "sets": "4 x 8‑12",
+            "rest": "90s",
+            "notes": "Compuesto principal para pectoral medio",
+            "type": "Compuesto",
+            "imageUrl": "https://fitcron.com/wp-content/uploads/2021/04/17431301-Dumbbell-Twisting-Bench-Press_Upper-Arms_720.gif"
           },
           {
-            name: "Press inclinado con mancuernas",
-            sets: "3 x 8‑12",
-            rest: "90s",
-            notes: "Parte superior",
-            type: "Compuesto",
-            imageUrl:
-              "https://eresfitness.com/wp-content/uploads/2019/07/Press-de-banca-inclinado-con-mancuernas-Musculos.jpg.webp",
+            "name": "Press inclinado con mancuernas",
+            "sets": "3 x 10‑12",
+            "rest": "90s",
+            "notes": "Enfocado en parte superior del pectoral",
+            "type": "Compuesto",
+            "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Incline-Dumbbell-Press.gif"
           },
           {
-            name: "Aperturas con mancuernas",
-            sets: "3 x 10‑12",
-            rest: "60s",
-            notes: "Control negativa",
-            type: "Aislado",
-            imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrabpVzpblaU1F6moowgaOi-fRtRtHqJX7cw&s",
+            "name": "Aperturas planas con mancuernas",
+            "sets": "3 x 12‑15",
+            "rest": "60s",
+            "notes": "Aislamiento y estiramiento del pecho",
+            "type": "Aislado",
+            "imageUrl": "https://static.strengthlevel.com/images/exercises/dumbbell-fly/dumbbell-fly-800.jpg"
           },
-        ],
+          {
+            "name": "Press declinado con mancuernas",
+            "sets": "3 x 10",
+            "rest": "90s",
+            "notes": "Foco en pectoral inferior",
+            "type": "Compuesto",
+            "imageUrl": "https://fitcron.com/wp-content/uploads/2021/03/03031301-Dumbbell-Decline-Hammer-Press_Chest_720.gif"
+          },
+          {
+            "name": "Pullover con mancuerna",
+            "sets": "3 x 12",
+            "rest": "60s",
+            "notes": "Complementario para pecho y dorsales",
+            "type": "Aislado",
+            "imageUrl": "https://www.gladiatorfit.ch/wp-content/uploads/2023/01/pull-over-haltere-1000x563.jpg"
+          }
+        ]
       },
       {
         name: "ESPALDA",
         muscleGroup: "back",
         exercises: [
           {
-            name: "Remo a una mano",
+            name: "Remo a una mano con mancuerna",
             sets: "4 x 8‑12",
             rest: "90s",
-            notes: "Compuesto principal",
+            notes: "Compuesto principal unilateral",
             type: "Compuesto",
             imageUrl: "https://hips.hearstapps.com/hmg-prod/images/dumbbell-single-arm-row-1547729333.gif",
           },
           {
-            name: "Dominadas",
-            sets: "3 x 8‑12",
+            name: "Remo inclinado con mancuernas",
+            sets: "3 x 10‑12",
             rest: "90s",
-            notes: "Al fallo",
+            notes: "Dorsales y romboides",
             type: "Compuesto",
-            imageUrl:
-              "https://cdn0.uncomo.com/es/posts/5/1/5/piernas_flexionadas_con_mancuernas_al_pecho_24515_0_600.jpg",
+            imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ101PKcvA-6EANYX5Drnq5ekBT-KbufCXuw&s",
           },
           {
             name: "Pullover con mancuerna",
             sets: "3 x 12",
             rest: "60s",
-            notes: "Estira dorsal",
+            notes: "Estira y activa dorsales",
             type: "Aislado",
             imageUrl: "https://fitcron.com/wp-content/uploads/2021/03/02881301-Dumbbell-Around-Pullover_Chest_720.gif",
           },
+          {
+            name: "Encogimiento de hombros con mancuernas",
+            sets: "3 x 15",
+            rest: "60s",
+            notes: "Foco en trapecios",
+            type: "Aislado",
+            imageUrl: "https://fitcron.com/wp-content/uploads/2021/04/03291301-Dumbbell-Incline-Shrug_Back_720.gif",
+          },
+          {
+            name: "Pájaros (reverse fly) inclinado",
+            sets: "3 x 12",
+            rest: "60s",
+            notes: "Trapecio medio y deltoide posterior",
+            type: "Aislado",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-reverse-fly/dumbbell-reverse-fly-800.jpg",
+          },
+          {
+            name: "Jalones dobles mancuernas",
+            sets: "3 x 12",
+            rest: "60s",
+            notes: "Trapecio medio y deltoide posterior",
+            type: "Aislado",
+            imageUrl: "https://i.ytimg.com/vi/CCLrgxrr8vM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLCGN6ybrhQfMsnbuKwv_GVRBCKDBA",
+          },
         ],
-      },
+      }
+      
     ],
   },
 
   2: {
-    title: "MARTES",
-    subtitle: "Hombros, Bíceps, Tríceps y Antebrazo",
-    dayOfWeek: 2,
-    warmup: "5‑10 min cardio + rotaciones de hombros y 2 series ligeras de elevaciones laterales y curl.",
-    stretching: "Hombro cruzado, tríceps tras nuca, bíceps en pared y antebrazo flexor/extensor 15‑20 s c/u.",
-    groups: [
+    "title": "MARTES",
+    "subtitle": "Hombros, Tríceps, Bíceps y Antebrazo",
+    "dayOfWeek": 2,
+    "warmup": "5‑10 min cardio + rotaciones de hombros y 2 series ligeras de elevaciones laterales y curl.",
+    "stretching": "Hombro cruzado, tríceps tras nuca, bíceps en pared y antebrazo flexor/extensor 15‑20 s c/u.",
+    "groups": [
       {
-        name: "HOMBROS",
-        muscleGroup: "shoulders",
-        exercises: [
+        "name": "HOMBROS",
+        "muscleGroup": "shoulders",
+        "exercises": [
           {
-            name: "Press Arnold",
-            sets: "3 x 8‑10",
-            rest: "90s",
-            notes: "Compuesto",
-            type: "Compuesto",
-            imageUrl: "https://fitcron.com/wp-content/uploads/2021/04/02871301-Dumbbell-Arnold-Press-II_Shoulders_720.gif",
+            "name": "Press Arnold",
+            "sets": "3 x 8‑10",
+            "rest": "90s",
+            "notes": "Compuesto",
+            "type": "Compuesto",
+            "imageUrl": "https://fitcron.com/wp-content/uploads/2021/04/02871301-Dumbbell-Arnold-Press-II_Shoulders_720.gif"
           },
           {
-            name: "Press militar con mancuernas",
-            sets: "3 x 8‑10",
-            rest: "90s",
-            notes: "Compuesto",
-            type: "Compuesto",
-            imageUrl:
-              "https://fitcron.com/wp-content/uploads/2021/04/04261301-Dumbbell-Standing-Overhead-Press_shoulder_720.gif",
+            "name": "Elevaciones laterales",
+            "sets": "3 x 10‑12",
+            "rest": "60s",
+            "notes": "Deltoide medio",
+            "type": "Aislado",
+            "imageUrl": "https://www.inspireusafoundation.org/wp-content/uploads/2022/03/lateral-raise.png"
           },
           {
-            name: "Elevaciones laterales",
-            sets: "3 x 10‑12",
-            rest: "60s",
-            notes: "Deltoide medio",
-            type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/03/lateral-raise.png",
+            "name": "Elevaciones posteriores",
+            "sets": "3 x 10‑12",
+            "rest": "60s",
+            "notes": "Deltoide posterior",
+            "type": "Aislado",
+            "imageUrl": "https://www.inspireusafoundation.org/wp-content/uploads/2022/08/dumbbell-reverse-fly.png"
           },
           {
-            name: "Elevaciones posteriores",
-            sets: "3 x 10‑12",
-            rest: "60s",
-            notes: "Deltoide posterior",
-            type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/08/dumbbell-reverse-fly.png",
-          },
-          {
-            name: "Elevaciones Frontales",
-            sets: "3 x 10‑12",
-            rest: "60s",
-            notes: "Deltoide posterior",
-            type: "Aislado",
-            imageUrl: "https://fitcron.com/wp-content/uploads/2021/04/03101301-Dumbbell-Front-Raise_Shoulders_720.gif",
-          },
-          {
-            name: "Remo al frente",
-            sets: "3 x 10‑12",
-            rest: "60s",
-            notes: "Deltoide posterior",
-            type: "Aislado",
-            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-upright-row/dumbbell-upright-row-800.avif",
-          },
-        ],
+            "name": "Elevaciones frontales",
+            "sets": "3 x 10‑12",
+            "rest": "60s",
+            "notes": "Deltoide anterior",
+            "type": "Aislado",
+            "imageUrl": "https://fitcron.com/wp-content/uploads/2021/04/03101301-Dumbbell-Front-Raise_Shoulders_720.gif"
+          }
+        ]
       },
       {
-        name: "BÍCEPS",
-        muscleGroup: "arms",
-        exercises: [
+        "name": "TRÍCEPS",
+        "muscleGroup": "arms",
+        "exercises": [
           {
-            name: "Curl alterno",
-            sets: "3 x 8‑12",
-            rest: "60s",
-            notes: "Supinación completa",
-            type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/alternating-dumbbell-curl.png",
+            "name": "Press francés acostado",
+            "sets": "3 x 10‑12",
+            "rest": "60s",
+            "notes": "Codos fijos",
+            "type": "Aislado",
+            "imageUrl": "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/lying-triceps-extension.png"
           },
           {
-            name: "Curl martillo",
-            sets: "3 x 8‑12",
-            rest: "60s",
-            notes: "Braquial",
-            type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/hammer-curl.png",
+            "name": "Extensión sobre cabeza",
+            "sets": "3 x 10‑12",
+            "rest": "60s",
+            "notes": "Mancuerna",
+            "type": "Aislado",
+            "imageUrl": "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/overhead-triceps-extension.png"
           },
           {
-            name: "Curl concentrado",
-            sets: "3 x 10‑12",
-            rest: "60s",
-            notes: "Aislado",
-            type: "Aislado",
-            imageUrl: "https://cdn.shopify.com/s/files/1/0425/7667/4983/files/5_dae278f7-644a-4d5b-87a5-0f1647eba082.png?v=1708942084",
-          },
-          {
-            name: "Curl martillo en banco inclinado boca abajo con mancuernas",
-            sets: "3 x 10‑12",
-            rest: "60s",
-            notes: "Braquial",
-            type: "Aislado",
-            imageUrl: "https://www.lyfta.app/thumbnails/16741201.jpg",
-          },
-        ],
+            "name": "Patada de tríceps",
+            "sets": "3 x 10‑12",
+            "rest": "60s",
+            "notes": "Kick‑back",
+            "type": "Aislado",
+            "imageUrl": "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/triceps-kickback.png"
+          }
+        ]
       },
       {
-        name: "TRÍCEPS",
-        muscleGroup: "arms",
-        exercises: [
+        "name": "BÍCEPS",
+        "muscleGroup": "arms",
+        "exercises": [
           {
-            name: "Extensión sobre cabeza",
-            sets: "3 x 10‑12",
-            rest: "60s",
-            notes: "Mancuerna",
-            type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/overhead-triceps-extension.png",
+            "name": "Curl alterno",
+            "sets": "3 x 8‑12",
+            "rest": "60s",
+            "notes": "Supinación completa",
+            "type": "Aislado",
+            "imageUrl": "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/alternating-dumbbell-curl.png"
           },
           {
-            name: "Press francés acostado",
-            sets: "3 x 10‑12",
-            rest: "60s",
-            notes: "Codos fijos",
-            type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/lying-triceps-extension.png",
+            "name": "Curl martillo",
+            "sets": "3 x 8‑12",
+            "rest": "60s",
+            "notes": "Braquial",
+            "type": "Aislado",
+            "imageUrl": "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/hammer-curl.png"
           },
           {
-            name: "Patada de tríceps",
-            sets: "3 x 10‑12",
-            rest: "60s",
-            notes: "Kick‑back",
-            type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/triceps-kickback.png",
+            "name": "Curl concentrado",
+            "sets": "3 x 10‑12",
+            "rest": "60s",
+            "notes": "Aislado",
+            "type": "Aislado",
+            "imageUrl": "https://cdn.shopify.com/s/files/1/0425/7667/4983/files/5_dae278f7-644a-4d5b-87a5-0f1647eba082.png?v=1708942084"
           },
-        ],
+          {
+            "name": "Curl martillo en banco inclinado boca abajo con mancuernas",
+            "sets": "3 x 10‑12",
+            "rest": "60s",
+            "notes": "Braquial finalizador",
+            "type": "Aislado",
+            "imageUrl": "https://www.lyfta.app/thumbnails/16741201.jpg"
+          }
+        ]
       },
       {
-        name: "ANTEBRAZOS",
-        muscleGroup: "arms",
-        exercises: [
+        "name": "ANTEBRAZOS",
+        "muscleGroup": "arms",
+        "exercises": [
           {
-            name: "Curl de muñeca",
-            sets: "3 x 12‑15",
-            rest: "60s",
-            notes: "Flexores",
-            type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/wrist-curl.png",
+            "name": "Curl de muñeca",
+            "sets": "3 x 12‑15",
+            "rest": "60s",
+            "notes": "Flexores",
+            "type": "Aislado",
+            "imageUrl": "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/wrist-curl.png"
           },
           {
-            name: "Curl inverso",
-            sets: "3 x 10‑12",
-            rest: "60s",
-            notes: "Extensores",
-            type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/reverse-wrist-curl.png",
-          },
-        ],
-      },
-    ],
+            "name": "Curl inverso",
+            "sets": "3 x 10‑12",
+            "rest": "60s",
+            "notes": "Extensores",
+            "type": "Aislado",
+            "imageUrl": "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/reverse-wrist-curl.png"
+          }
+        ]
+      }
+    ]
   },
 
   3: {
-    title: "MIÉRCOLES",
-    subtitle: "Pierna y Abdominales",
-    dayOfWeek: 3,
-    warmup: "5‑10 min salto cuerda o trote + sentadillas y estocadas sin peso.",
-    stretching: "Cuádriceps, isquios, glúteos y pantorrillas 20‑30 s; cobra para abdominales.",
-    groups: [
+    "title": "MIÉRCOLES",
+    "subtitle": "Piernas y Abdominales",
+    "dayOfWeek": 3,
+    "warmup": "5‑10 min salto cuerda o trote + sentadillas y estocadas sin peso.",
+    "stretching": "Cuádriceps, isquiosurales, glúteos y pantorrillas 20‑30 s; cobra para abdominales.",
+    "groups": [
       {
-        name: "PIERNAS",
-        muscleGroup: "legs",
-        exercises: [
+        "name": "PIERNAS",
+        "muscleGroup": "legs",
+        "exercises": [
           {
-            name: "Sentadilla goblet",
-            sets: "4 x 8‑12",
-            rest: "90s",
-            notes: "Cuádriceps/glúteo",
-            type: "Compuesto",
-            imageUrl: "https://cdn.shopify.com/s/files/1/0269/5551/3900/files/Dumbbell-Goblet-Squat_600x600.png?v=1612049778",
+            "name": "Sentadilla goblet",
+            "sets": "4 x 8‑12",
+            "rest": "90s",
+            "notes": "Enfocado en cuádriceps y glúteos",
+            "type": "Compuesto",
+            "imageUrl": "https://cdn.shopify.com/s/files/1/0269/5551/3900/files/Dumbbell-Goblet-Squat_600x600.png?v=1612049778"
           },
           {
-            name: "Peso muerto rumano",
-            sets: "4 x 8‑12",
-            rest: "90s",
-            notes: "Isquios/glúteo",
-            type: "Compuesto",
-            imageUrl: "https://static.wixstatic.com/media/c94d75_ed1cfc9ed62b4864aa554972e6b974f4~mv2.gif",
+            "name": "Peso muerto rumano con mancuernas",
+            "sets": "4 x 8‑12",
+            "rest": "90s",
+            "notes": "Isquiosurales y glúteo",
+            "type": "Compuesto",
+            "imageUrl": "https://static.wixstatic.com/media/c94d75_ed1cfc9ed62b4864aa554972e6b974f4~mv2.gif"
           },
           {
-            name: "Zancadas con mancuernas",
-            sets: "3 x 8‑10 c/l",
-            rest: "90s",
-            notes: "Estocadas",
-            type: "Compuesto",
-            imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGTw98CLW2aEoz6K7f4-qHVtZoCAD-5Dl63g&s",
+            "name": "Zancadas con mancuernas",
+            "sets": "3 x 8‑10 c/l",
+            "rest": "90s",
+            "notes": "Trabajo unilateral para fuerza y estabilidad",
+            "type": "Compuesto",
+            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGTw98CLW2aEoz6K7f4-qHVtZoCAD-5Dl63g&s"
           },
           {
-            name: "Elevaciones de pantorrillas",
-            sets: "4 x 15‑20",
-            rest: "60s",
-            notes: "Gemelos",
-            type: "Aislado",
-            imageUrl:
-              "https://www.thingys.com.ar/gymapps/tutorial/pant_pie.gif",
-          },
-        ],
+            "name": "Elevaciones de pantorrillas",
+            "sets": "4 x 15‑20",
+            "rest": "60s",
+            "notes": "Gemelos",
+            "type": "Aislado",
+            "imageUrl": "https://www.thingys.com.ar/gymapps/tutorial/pant_pie.gif"
+          }
+        ]
       },
       {
-        name: "ABDOMINALES",
-        muscleGroup: "core",
-        exercises: [
+        "name": "ABDOMINALES",
+        "muscleGroup": "core",
+        "exercises": [
           {
-            name: "Crunch",
-            sets: "3 x 15‑20",
-            rest: "60s",
-            notes: "Recto abdominal",
-            type: "Aislado",
-            imageUrl: "https://i.ytimg.com/vi/OsUz898onTE/sddefault.jpg",
+            "name": "Crunch",
+            "sets": "3 x 15‑20",
+            "rest": "60s",
+            "notes": "Enfocado en el recto abdominal",
+            "type": "Aislado",
+            "imageUrl": "https://i.ytimg.com/vi/OsUz898onTE/sddefault.jpg"
           },
           {
-            name: "Elevaciones de piernas",
-            sets: "3 x 12‑15",
-            rest: "60s",
-            notes: "Ab inferior",
-            type: "Aislado",
-            imageUrl: "https://www.hsnstore.com/blog/wp-content/uploads/2021/03/elevacion-piernas-suelo.gif",
+            "name": "Elevaciones de piernas",
+            "sets": "3 x 12‑15",
+            "rest": "60s",
+            "notes": "Abdominal inferior",
+            "type": "Aislado",
+            "imageUrl": "https://www.hsnstore.com/blog/wp-content/uploads/2021/03/elevacion-piernas-suelo.gif"
           },
           {
-            name: "Plancha",
-            sets: "3 x 30‑45s",
-            rest: "30s",
-            notes: "Isométrico",
-            type: "Isométrico",
-            imageUrl: "https://mejorconsalud.as.com/wp-content/uploads/2016/11/Hacer-plank-todos-los-di%CC%81as.jpg?auto=webp&quality=7500&width=1920&crop=16:9,smart,safe&format=webp&optimize=medium&dpr=2&fit=cover&fm=webp&q=75&w=1920&h=1080",
-          },
-          {
-            name: "Press de banca abd",
-            sets: "3 x 30‑45s",
-            rest: "30s",
-            notes: "Isométrico",
-            type: "Isométrico",
-            imageUrl: "data:image/png;base64,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",
-          },
-        ],
-      },
-    ],
+            "name": "Plancha",
+            "sets": "3 x 30‑45s",
+            "rest": "30s",
+            "notes": "Isométrico core completo",
+            "type": "Isométrico",
+            "imageUrl": "https://mejorconsalud.as.com/wp-content/uploads/2016/11/Hacer-plank-todos-los-di%CC%81as.jpg?auto=webp&quality=7500&width=1920&crop=16:9,smart,safe&format=webp&optimize=medium&dpr=2&fit=cover&fm=webp&q=75&w=1920&h=1080"
+          }
+        ]
+      }
+    ]
   },
+  
 
   4: {
-    title: "JUEVES",
-    subtitle: "Pecho, Hombros y Tríceps",
-    dayOfWeek: 4,
-    warmup: "Cardio suave 5‑10 min + series ligeras de press y elevaciones laterales.",
-    stretching: "Estiramiento de pectoral, deltoide anterior y tríceps 20‑25 s c/u.",
-    groups: [
+    "title": "JUEVES",
+    "subtitle": "Pecho, Hombros y Tríceps",
+    "dayOfWeek": 4,
+    "warmup": "Cardio suave 5‑10 min + series ligeras de press y elevaciones laterales.",
+    "stretching": "Estiramiento de pectoral, deltoide anterior y tríceps 20‑25 s c/u.",
+    "groups": [
       {
-        name: "PECHO",
-        muscleGroup: "chest",
-        exercises: [
+        "name": "PECHO",
+        "muscleGroup": "chest",
+        "exercises": [
           {
-            name: "Press inclinado con mancuernas",
-            sets: "4 x 8‑10",
-            rest: "90s",
-            notes: "Compuesto",
-            type: "Compuesto",
-            imageUrl:
-              "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/incline-dumbbell-bench-press.png",
+            "name": "Press inclinado con mancuernas",
+            "sets": "4 x 8‑10",
+            "rest": "90s",
+            "notes": "Pectoral superior – compuesto principal",
+            "type": "Compuesto",
+            "imageUrl": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Incline-Dumbbell-Press.gif"
           },
           {
-            name: "Press piso (floor press)",
-            sets: "3 x 8‑10",
-            rest: "90s",
-            notes: "Densidad tricep‑pecho",
-            type: "Compuesto",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/dumbbell-floor-press.png",
+            "name": "Press en el suelo (floor press)",
+            "sets": "3 x 8‑10",
+            "rest": "90s",
+            "notes": "Foco en pectoral medio e inferior, menos estrés en hombro",
+            "type": "Compuesto",
+            "imageUrl": "https://static.strengthlevel.com/images/exercises/dumbbell-floor-press/dumbbell-floor-press-800.jpg"
           },
           {
-            name: "Aperturas en banco inclinado",
-            sets: "3 x 10‑12",
-            rest: "60s",
-            notes: "Estiramiento clavicular",
-            type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/incline-dumbbell-fly.png",
+            "name": "Aperturas en banco inclinado",
+            "sets": "3 x 10‑12",
+            "rest": "60s",
+            "notes": "Estiramiento y aislamiento de pectoral superior",
+            "type": "Aislado",
+            "imageUrl": "https://fitcron.com/wp-content/uploads/2021/03/03081301-Dumbbell-Fly_Chest-FIX_720.gif"
           },
           {
-            name: "Pullover pectoral",
-            sets: "3 x 12‑15",
-            rest: "60s",
-            notes: "Expansión caja torácica",
-            type: "Compuesto",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/dumbbell-pullover.png",
-          },
-        ],
+            "name": "Pullover con mancuerna",
+            "sets": "3 x 12‑15",
+            "rest": "60s",
+            "notes": "Expansión torácica y trabajo complementario dorsal/pectoral",
+            "type": "Aislado",
+            "imageUrl": "https://i.pinimg.com/originals/13/aa/8a/13aa8ae3a88c2ed8f1d48be6607b0009.gif"
+          }
+        ]
       },
       {
-        name: "HOMBROS",
-        muscleGroup: "shoulders",
-        exercises: [
+        "name": "HOMBROS",
+        "muscleGroup": "shoulders",
+        "exercises": [
           {
-            name: "Press militar con mancuernas",
-            sets: "3 x 8‑10",
-            rest: "90s",
-            notes: "Compuesto",
-            type: "Compuesto",
-            imageUrl:
-              "https://www.inspireusafoundation.org/wp-content/uploads/2022/06/dumbbell-shoulder-press-1024x784.png",
+            "name": "Press militar con mancuernas",
+            "sets": "3 x 8‑10",
+            "rest": "90s",
+            "notes": "Deltoide anterior y medio – compuesto",
+            "type": "Compuesto",
+            "imageUrl": "https://fitcron.com/wp-content/uploads/2021/04/02871301-Dumbbell-Arnold-Press-II_Shoulders_720.gif"
           },
           {
-            name: "Elevaciones laterales inclinadas",
-            sets: "3 x 10‑12",
-            rest: "60s",
-            notes: "Deltoide medio",
-            type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/03/incline-lateral-raise.png",
+            "name": "Elevaciones laterales inclinadas",
+            "sets": "3 x 10‑12",
+            "rest": "60s",
+            "notes": "Foco en deltoide medio",
+            "type": "Aislado",
+            "imageUrl": "https://fitcron.com/wp-content/uploads/2021/04/03261301-Dumbbell-Incline-Rear-Lateral-Raise_Shoulders_720.gif"
           },
           {
-            name: "Face‑pull con mancuernas",
-            sets: "3 x 12‑15",
-            rest: "60s",
-            notes: "Deltoide posterior",
-            type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/08/dumbbell-face-pull.png",
-          },
-        ],
+            "name": "Face pull con mancuernas",
+            "sets": "3 x 12‑15",
+            "rest": "60s",
+            "notes": "Deltoide posterior y estabilización escapular",
+            "type": "Aislado",
+            "imageUrl": "https://i.pinimg.com/736x/0f/1a/36/0f1a36cc559bc93235844b35c6d6abee.jpg"
+          }
+        ]
       },
       {
-        name: "TRÍCEPS",
-        muscleGroup: "arms",
-        exercises: [
+        "name": "TRÍCEPS",
+        "muscleGroup": "arms",
+        "exercises": [
           {
-            name: "Press francés (acostado)",
-            sets: "3 x 10‑12",
-            rest: "60s",
-            notes: "Codos fijos",
-            type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/lying-triceps-extension.png",
+            "name": "Press francés acostado",
+            "sets": "3 x 10‑12",
+            "rest": "60s",
+            "notes": "Trabajo de la cabeza larga del tríceps",
+            "type": "Aislado",
+            "imageUrl": "https://i.makeagif.com/media/10-19-2022/cBhLkv.gif"
           },
           {
-            name: "Fondos en banco",
-            sets: "3 x al fallo",
-            rest: "60‑90s",
-            notes: "Peso corporal",
-            type: "Compuesto",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/bench-dip.png",
+            "name": "Extensión unil. sentado",
+            "sets": "3 x 10‑12 c/l",
+            "rest": "60s",
+            "notes": "Aislamiento con control de cada brazo",
+            "type": "Aislado",
+            "imageUrl": "https://www.entrenador.fit/wp-content/uploads/Extensi%C3%B3n-de-triceps-sentado-con-mancuernas.gif"
           },
           {
-            name: "Extensión unil. sentado",
-            sets: "3 x 10‑12 c/l",
-            rest: "60s",
-            notes: "Aislado",
-            type: "Aislado",
-            imageUrl:
-              "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/one-arm-overhead-triceps-extension.png",
-          },
-        ],
-      },
-    ],
+            "name": "Fondos en banco",
+            "sets": "3 x al fallo",
+            "rest": "60‑90s",
+            "notes": "Ejercicio con peso corporal, bombeo final",
+            "type": "Compuesto",
+            "imageUrl": "https://hips.hearstapps.com/hmg-prod/images/fondos-en-banco-1621951812.gif"
+          }
+        ]
+      }
+    ]
   },
 
   5: {
-    title: "VIERNES",
-    subtitle: "Espalda, Bíceps y Antebrazo",
-    dayOfWeek: 5,
-    warmup: "Cardio ligero + colgarse en barra 30 s + series suaves de remo y curl.",
-    stretching: "Estiramiento dorsal colgado, bíceps en pared, antebrazo 20‑25 s c/u.",
-    groups: [
+    "title": "VIERNES",
+    "subtitle": "Espalda, Bíceps y Antebrazo",
+    "dayOfWeek": 5,
+    "warmup": "Cardio ligero + colgarse en barra 30 s + series suaves de remo y curl.",
+    "stretching": "Estiramiento dorsal colgado, bíceps en pared, antebrazo 20‑25 s c/u.",
+    "groups": [
       {
-        name: "ESPALDA",
-        muscleGroup: "back",
-        exercises: [
+        "name": "ESPALDA",
+        "muscleGroup": "back",
+        "exercises": [
           {
-            name: "Remo inclinado con mancuernas",
-            sets: "4 x 8‑10",
-            rest: "90s",
-            notes: "Compuesto",
-            type: "Compuesto",
-            imageUrl: "https://fitcron.com/wp-content/uploads/2021/04/03271301-Dumbbell-Incline-Row_Back_720.gif",
+            "name": "Remo inclinado con mancuernas",
+            "sets": "4 x 8‑10",
+            "rest": "90s",
+            "notes": "Compuesto principal para dorsales y romboides",
+            "type": "Compuesto",
+            "imageUrl": "https://fitcron.com/wp-content/uploads/2021/04/03271301-Dumbbell-Incline-Row_Back_720.gif"
           },
           {
-            name: "Pullover con mancuerna",
-            sets: "3 x 10‑12",
-            rest: "60s",
-            notes: "Espalda ancha",
-            type: "Compuesto",
-            imageUrl: "https://cambiandoeljuego.com/wp-content/uploads/2018/09/pullover.gif",
+            "name": "Pullover con mancuerna",
+            "sets": "3 x 10‑12",
+            "rest": "60s",
+            "notes": "Enfocado en dorsales y expansión torácica",
+            "type": "Compuesto",
+            "imageUrl": "https://cambiandoeljuego.com/wp-content/uploads/2018/09/pullover.gif"
           },
           {
-            name: "remo con mancuerna espalda",
-            sets: "3 x 12‑15",
-            rest: "60s",
-            notes: "Trapecio",
-            type: "Aislado",
-            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-row/dumbbell-row-800.jpg",
-          },
-        ],
+            "name": "Remo a una mano con mancuerna",
+            "sets": "3 x 12‑15",
+            "rest": "60s",
+            "notes": "Enfocado en dorsales, romboides y trapecio medio",
+            "type": "Aislado",
+            "imageUrl": "https://static.strengthlevel.com/images/exercises/dumbbell-row/dumbbell-row-800.jpg"
+          }
+        ]
       },
       {
-        name: "BÍCEPS",
-        muscleGroup: "arms",
-        exercises: [
+        "name": "BÍCEPS",
+        "muscleGroup": "arms",
+        "exercises": [
           {
-            name: "Curl alterno",
-            sets: "3 x 8‑12",
-            rest: "60s",
-            notes: "Supinación",
-            type: "Aislado",
-            imageUrl: "https://eresfitness.com/wp-content/uploads/2019/05/Curl-de-biceps.gif",
+            "name": "Curl alterno con supinación",
+            "sets": "3 x 8‑12",
+            "rest": "60s",
+            "notes": "Trabaja bíceps largo y corto",
+            "type": "Aislado",
+            "imageUrl": "https://eresfitness.com/wp-content/uploads/2019/05/Curl-de-biceps.gif"
           },
           {
-            name: "Curl martillo",
-            sets: "3 x 8‑12",
-            rest: "60s",
-            notes: "Braquial",
-            type: "Aislado",
-            imageUrl:
-              "https://fitcron.com/wp-content/uploads/2021/04/16571301-Dumbbell-Cross-Body-Hammer-Curl-Version-2_Upper-Arms_720.gif",
+            "name": "Curl martillo cruzado",
+            "sets": "3 x 8‑12",
+            "rest": "60s",
+            "notes": "Enfocado en braquial y braquiorradial",
+            "type": "Aislado",
+            "imageUrl": "https://fitcron.com/wp-content/uploads/2021/04/16571301-Dumbbell-Cross-Body-Hammer-Curl-Version-2_Upper-Arms_720.gif"
           },
           {
-            name: "Curl 21s",
-            sets: "2 series 21‑reps",
-            rest: "90s",
-            notes: "Quemador",
-            type: "Aislado",
-            imageUrl: "https://bulevip.com/blog/wp-content/uploads/2019/04/biceps-marcados-ejercicio-3.jpg",
-          },
-        ],
+            "name": "Curl 21s (7‑7‑7)",
+            "sets": "2 x 21 reps",
+            "rest": "90s",
+            "notes": "Alta congestión para cierre de rutina",
+            "type": "Aislado",
+            "imageUrl": "https://bulevip.com/blog/wp-content/uploads/2019/04/biceps-marcados-ejercicio-3.jpg"
+          }
+        ]
       },
       {
-        name: "ANTEBRAZOS",
-        muscleGroup: "arms",
-        exercises: [
+        "name": "ANTEBRAZOS",
+        "muscleGroup": "arms",
+        "exercises": [
           {
-            name: "Curl inverso",
-            sets: "3 x 10‑12",
-            rest: "60s",
-            notes: "Extensores",
-            type: "Aislado",
-            imageUrl: "https://i.pinimg.com/originals/d9/4f/9d/d94f9ddafd70a0725d160242a7aae78b.gif",
+            "name": "Curl inverso con mancuernas",
+            "sets": "3 x 10‑12",
+            "rest": "60s",
+            "notes": "Enfocado en extensores del antebrazo",
+            "type": "Aislado",
+            "imageUrl": "https://i.pinimg.com/originals/d9/4f/9d/d94f9ddafd70a0725d160242a7aae78b.gif"
           },
           {
-            name: "Curl de muñeca pronado",
-            sets: "3 x 12‑15",
-            rest: "60s",
-            notes: "Flexores",
-            type: "Aislado",
-            imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWuTs-br9LN67-WYxZg5dhD6QAylyvKGzJig&s",
-          },
-        ],
-      },
-    ],
-  },
+            "name": "Curl de muñeca pronado",
+            "sets": "3 x 12‑15",
+            "rest": "60s",
+            "notes": "Enfocado en flexores del antebrazo",
+            "type": "Aislado",
+            "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWuTs-br9LN67-WYxZg5dhD6QAylyvKGzJig&s"
+          }
+        ]
+      }
+    ]
+  }
+  
 }
