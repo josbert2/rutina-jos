@@ -34,12 +34,33 @@ export default function WorkoutDay({
     name: "",
   })
 
+  const [restTime, setRestTime] = useState(120); 
+  const [isResting, setIsResting] = useState(false);
+
   const toggleGroup = (groupName: string) => {
     setExpandedGroups((prev) => ({
       ...prev,
       [groupName]: !prev[groupName],
     }))
   }
+  const startTimer = () => {
+    setIsResting(true);
+    const timer = setInterval(() => {
+      setRestTime((prevTime) => {
+        if (prevTime <= 0) {
+          clearInterval(timer);
+          setIsResting(false);
+          return 0;
+        }
+        return prevTime - 1;
+      });
+    }, 1000);
+  };
+
+  const resetTimer = () => {
+    setRestTime(120); // Reset to 2 minutes
+    setIsResting(false);
+  };
 
   const openExerciseImageModal = (imageUrl: string, exerciseName: string) => {
     setCurrentExerciseImage({ url: imageUrl, name: exerciseName })
@@ -285,6 +306,9 @@ export default function WorkoutDay({
           <DialogHeader>
             <DialogTitle>{currentExerciseImage.name}</DialogTitle>
             <DialogDescription>Visualización de la técnica correcta del ejercicio</DialogDescription>
+            <Button onClick={startTimer} disabled={isResting} className="my-4">
+              {isResting ? `Rest: ${restTime}s` : "Start Rest Timer"}
+            </Button>
           </DialogHeader>
           <div className="flex justify-center p-2">
             <img
