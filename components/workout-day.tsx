@@ -152,144 +152,151 @@ export default function WorkoutDay({
                         key={exercise.name}
                         className={cn("p-4 transition-colors", isExerciseCompleted ? "bg-primary/5" : "")}
                       >
-                        <div className="flex items-start justify-between mb-3">
-                          <div className="flex-1">
-                            <div className="flex items-center gap-2 mb-2">
-                              <Dumbbell
-                                className={cn(
-                                  "h-5 w-5",
-                                  isExerciseCompleted ? "text-primary" : "text-muted-foreground",
-                                )}
-                              />
-                              <div className="flex items-center gap-1">
-                                <h3 className="font-medium">{exercise.name}</h3>
-                                {exercise.imageUrl && (
-                                  <Button
-                                    variant="ghost"
-                                    size="icon"
-                                    className="h-6 w-6 rounded-full"
-                                    onClick={(e) => {
-                                      e.stopPropagation()
-                                      openExerciseImageModal(exercise.imageUrl || "", exercise.name)
-                                    }}
-                                  >
-                                    <span className="sr-only">Ver imagen del ejercicio</span>
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="16"
-                                      height="16"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      strokeWidth="2"
-                                      strokeLinecap="round"
-                                      strokeLinejoin="round"
-                                      className="lucide lucide-image"
-                                    >
-                                      <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
-                                      <circle cx="9" cy="9" r="2" />
-                                      <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                                    </svg>
-                                  </Button>
-                                )}
+                        <div className="grid grid-cols-12">
+                          <div  className="flex items-start justify-between mb-3 col-span-9 flex-col ">
+                            <div className="flex items-start justify-between mb-3">
+                              <div className="flex-1">
+                                <div className="flex items-center gap-2 mb-2">
+                                  <Dumbbell
+                                    className={cn(
+                                      "h-5 w-5",
+                                      isExerciseCompleted ? "text-primary" : "text-muted-foreground",
+                                    )}
+                                  />
+                                  <div className="flex items-center gap-1">
+                                    <h3 className="font-medium">{exercise.name}</h3>
+                                    {exercise.imageUrl && (
+                                      <Button
+                                        variant="ghost"
+                                        size="icon"
+                                        className="h-6 w-6 rounded-full"
+                                        onClick={(e) => {
+                                          e.stopPropagation()
+                                          openExerciseImageModal(exercise.imageUrl || "", exercise.name)
+                                        }}
+                                      >
+                                        <span className="sr-only">Ver imagen del ejercicio</span>
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width="16"
+                                          height="16"
+                                          viewBox="0 0 24 24"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          strokeWidth="2"
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          className="lucide lucide-image"
+                                        >
+                                          <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                                          <circle cx="9" cy="9" r="2" />
+                                          <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
+                                        </svg>
+                                      </Button>
+                                    )}
+                                  </div>
+                                  <Badge variant="outline" className="text-xs">
+                                    {exercise.type}
+                                  </Badge>
+                                </div>
+
+                                <div className="grid grid-cols-2 md:grid-cols-3 gap-2 ml-8 text-sm">
+                                  <div>
+                                    <span className="text-muted-foreground">Series: </span>
+                                    <span className="font-medium">{exercise.sets}</span>
+                                  </div>
+                                  <div>
+                                    <span className="text-muted-foreground">Descanso: </span>
+                                    <span className="font-medium">{exercise.rest}</span>
+                                  </div>
+                                  {exercise.notes && (
+                                    <div>
+                                      <span className="text-muted-foreground">Notas: </span>
+                                      <span className="font-medium">{exercise.notes}</span>
+                                    </div>
+                                  )}
+                                </div>
                               </div>
-                              <Badge variant="outline" className="text-xs">
-                                {exercise.type}
-                              </Badge>
+
+                              
                             </div>
 
-                            <div className="grid grid-cols-2 md:grid-cols-3 gap-2 ml-8 text-sm">
-                              <div>
-                                <span className="text-muted-foreground">Series: </span>
-                                <span className="font-medium">{exercise.sets}</span>
-                              </div>
-                              <div>
-                                <span className="text-muted-foreground">Descanso: </span>
-                                <span className="font-medium">{exercise.rest}</span>
-                              </div>
-                              {exercise.notes && (
-                                <div>
-                                  <span className="text-muted-foreground">Notas: </span>
-                                  <span className="font-medium">{exercise.notes}</span>
+                            {/* Series counter */}
+                            <div className="ml-8 mt-3 space-y-2">
+                              <div className="text-sm font-medium">Series:</div>
+                              <div className="grid grid-cols-1 gap-2">
+                                <div className="grid grid-cols-12 gap-2 text-xs font-medium text-muted-foreground mb-1">
+                                  <div className="col-span-1">#</div>
+                                  <div className="col-span-3">Peso</div>
+                                  <div className="col-span-3">Reps</div>
+                                  <div className="col-span-5">Completada</div>
                                 </div>
-                              )}
+
+                                {Array.from({ length: numSets }).map((_, index) => {
+                                  const setData = exerciseSets[index] || { completed: false }
+
+                                  return (
+                                    <div key={index} className="grid grid-cols-12 gap-2 items-center">
+                                      <div className="col-span-1 text-sm font-medium">{index + 1}</div>
+                                      <div className="col-span-3">
+                                        <Input
+                                          type="text"
+                                          placeholder="kg"
+                                          className="h-8 text-sm"
+                                          value={setData.weight || ""}
+                                          onChange={(e) => updateSetData(exerciseId, index, { weight: e.target.value })}
+                                        />
+                                      </div>
+                                      <div className="col-span-3">
+                                        <Input
+                                          type="text"
+                                          placeholder={repsRange}
+                                          className="h-8 text-sm"
+                                          value={setData.reps || ""}
+                                          onChange={(e) => updateSetData(exerciseId, index, { reps: e.target.value })}
+                                        />
+                                      </div>
+                                      <div className="col-span-5">
+                                        <Button
+                                          variant={setData.completed ? "default" : "outline"}
+                                          size="sm"
+                                          className="w-full h-8"
+                                          onClick={() => toggleSetCompletion(exerciseId, index)}
+                                        >
+                                          {setData.completed ? (
+                                            <span className="flex items-center gap-1">
+                                              <CheckCircle2 className="h-4 w-4" />
+                                              Completada
+                                            </span>
+                                          ) : (
+                                            <span className="flex items-center gap-1">
+                                              <Circle className="h-4 w-4" />
+                                              Pendiente
+                                            </span>
+                                          )}
+                                        </Button>
+                                      </div>
+                                    </div>
+                                  )
+                                })}
+                              </div>
                             </div>
                           </div>
-
-                          {exercise.imageUrl && (
-                            <div className="ml-4 flex-shrink-0">
-                              <div
-                                className="relative h-16 w-16 overflow-hidden rounded-md cursor-pointer hover:opacity-80 transition-opacity"
-                                onClick={() => openExerciseImageModal(exercise.imageUrl || "", exercise.name)}
-                              >
-                                <img
-                                  src={exercise.imageUrl || "/placeholder.svg"}
-                                  alt={exercise.name}
-                                  className="object-cover h-full w-full"
-                                />
-                              </div>
-                            </div>
-                          )}
-                        </div>
-
-                        {/* Series counter */}
-                        <div className="ml-8 mt-3 space-y-2">
-                          <div className="text-sm font-medium">Series:</div>
-                          <div className="grid grid-cols-1 gap-2">
-                            <div className="grid grid-cols-12 gap-2 text-xs font-medium text-muted-foreground mb-1">
-                              <div className="col-span-1">#</div>
-                              <div className="col-span-3">Peso</div>
-                              <div className="col-span-3">Reps</div>
-                              <div className="col-span-5">Completada</div>
-                            </div>
-
-                            {Array.from({ length: numSets }).map((_, index) => {
-                              const setData = exerciseSets[index] || { completed: false }
-
-                              return (
-                                <div key={index} className="grid grid-cols-12 gap-2 items-center">
-                                  <div className="col-span-1 text-sm font-medium">{index + 1}</div>
-                                  <div className="col-span-3">
-                                    <Input
-                                      type="text"
-                                      placeholder="kg"
-                                      className="h-8 text-sm"
-                                      value={setData.weight || ""}
-                                      onChange={(e) => updateSetData(exerciseId, index, { weight: e.target.value })}
+                          <div className="col-span-3">
+                             {exercise.imageUrl && (
+                                <div className="ml-4 flex-shrink-0">
+                                  <div
+                                    className="relative h-72 w-72 overflow-hidden rounded-md cursor-pointer hover:opacity-80 transition-opacity"
+                                    onClick={() => openExerciseImageModal(exercise.imageUrl || "", exercise.name)}
+                                  >
+                                    <img
+                                      src={exercise.imageUrl || "/placeholder.svg"}
+                                      alt={exercise.name}
+                                      className="object-cover h-full w-full"
                                     />
-                                  </div>
-                                  <div className="col-span-3">
-                                    <Input
-                                      type="text"
-                                      placeholder={repsRange}
-                                      className="h-8 text-sm"
-                                      value={setData.reps || ""}
-                                      onChange={(e) => updateSetData(exerciseId, index, { reps: e.target.value })}
-                                    />
-                                  </div>
-                                  <div className="col-span-5">
-                                    <Button
-                                      variant={setData.completed ? "default" : "outline"}
-                                      size="sm"
-                                      className="w-full h-8"
-                                      onClick={() => toggleSetCompletion(exerciseId, index)}
-                                    >
-                                      {setData.completed ? (
-                                        <span className="flex items-center gap-1">
-                                          <CheckCircle2 className="h-4 w-4" />
-                                          Completada
-                                        </span>
-                                      ) : (
-                                        <span className="flex items-center gap-1">
-                                          <Circle className="h-4 w-4" />
-                                          Pendiente
-                                        </span>
-                                      )}
-                                    </Button>
                                   </div>
                                 </div>
-                              )
-                            })}
+                              )}     
                           </div>
                         </div>
                       </div>

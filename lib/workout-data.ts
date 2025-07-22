@@ -137,7 +137,7 @@ export const workoutData: WorkoutData = {
             "rest": "60s",
             "notes": "Deltoide medio",
             "type": "Aislado",
-            "imageUrl": "https://www.inspireusafoundation.org/wp-content/uploads/2022/03/lateral-raise.png"
+            "imageUrl": "https://eresfitness.com/wp-content/uploads/2019/09/Elevaciones-laterales-con-mancuernas.jpg.webp"
           },
           {
             "name": "Elevaciones posteriores",
@@ -145,7 +145,7 @@ export const workoutData: WorkoutData = {
             "rest": "60s",
             "notes": "Deltoide posterior",
             "type": "Aislado",
-            "imageUrl": "https://www.inspireusafoundation.org/wp-content/uploads/2022/08/dumbbell-reverse-fly.png"
+            "imageUrl": "https://eresfitness.com/wp-content/uploads/2019/09/Elevaciones-posteriores-con-mancuernas.jpg.webp"
           },
           {
             "name": "Elevaciones frontales",
@@ -167,7 +167,7 @@ export const workoutData: WorkoutData = {
             "rest": "60s",
             "notes": "Codos fijos",
             "type": "Aislado",
-            "imageUrl": "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/lying-triceps-extension.png"
+            "imageUrl": "https://fitcron.com/wp-content/uploads/2021/04/03521301-Dumbbell-Neutral-Grip-Bench-Press_Upper-Arms_720.gif"
           },
           {
             "name": "Extensión sobre cabeza",
@@ -175,7 +175,7 @@ export const workoutData: WorkoutData = {
             "rest": "60s",
             "notes": "Mancuerna",
             "type": "Aislado",
-            "imageUrl": "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/overhead-triceps-extension.png"
+            "imageUrl": "https://media.tenor.com/GRMSvKqfksMAAAAM/triceps.gif"
           },
           {
             "name": "Patada de tríceps",
@@ -183,7 +183,7 @@ export const workoutData: WorkoutData = {
             "rest": "60s",
             "notes": "Kick‑back",
             "type": "Aislado",
-            "imageUrl": "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/triceps-kickback.png"
+            "imageUrl": "https://www.thingys.com.ar/gymapps/tutorial/pat_burro.gif"
           }
         ]
       },
@@ -197,7 +197,7 @@ export const workoutData: WorkoutData = {
             "rest": "60s",
             "notes": "Supinación completa",
             "type": "Aislado",
-            "imageUrl": "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/alternating-dumbbell-curl.png"
+            "imageUrl": "https://eresfitness.com/wp-content/uploads/2019/05/Curl-de-biceps.gif"
           },
           {
             "name": "Curl martillo",
@@ -205,7 +205,7 @@ export const workoutData: WorkoutData = {
             "rest": "60s",
             "notes": "Braquial",
             "type": "Aislado",
-            "imageUrl": "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/hammer-curl.png"
+            "imageUrl": "https://i.blogs.es/277dd4/martillo1/450_1000.webp"
           },
           {
             "name": "Curl concentrado",
@@ -213,7 +213,7 @@ export const workoutData: WorkoutData = {
             "rest": "60s",
             "notes": "Aislado",
             "type": "Aislado",
-            "imageUrl": "https://cdn.shopify.com/s/files/1/0425/7667/4983/files/5_dae278f7-644a-4d5b-87a5-0f1647eba082.png?v=1708942084"
+            "imageUrl": "https://fitcron.com/wp-content/uploads/2021/04/02971301-Dumbbell-Concentration-Curl_Upper-Arms_720.gif"
           },
           {
             "name": "Curl martillo en banco inclinado boca abajo con mancuernas",
@@ -221,7 +221,7 @@ export const workoutData: WorkoutData = {
             "rest": "60s",
             "notes": "Braquial finalizador",
             "type": "Aislado",
-            "imageUrl": "https://www.lyfta.app/thumbnails/16741201.jpg"
+            "imageUrl": "https://fitcron.com/wp-content/uploads/2021/04/36821301-Dumbbell-Incline-Alternate-Bicep-Curl_Upper-Arms_720.gif"
           }
         ]
       },
@@ -235,7 +235,7 @@ export const workoutData: WorkoutData = {
             "rest": "60s",
             "notes": "Flexores",
             "type": "Aislado",
-            "imageUrl": "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/wrist-curl.png"
+            "imageUrl": "https://i.makeagif.com/media/3-24-2024/T4LGO9.gif"
           },
           {
             "name": "Curl inverso",
@@ -243,7 +243,7 @@ export const workoutData: WorkoutData = {
             "rest": "60s",
             "notes": "Extensores",
             "type": "Aislado",
-            "imageUrl": "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/reverse-wrist-curl.png"
+            "imageUrl": "https://www.lyfta.app/thumbnails/03581201.jpg"
           }
         ]
       }
