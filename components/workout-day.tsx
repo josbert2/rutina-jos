@@ -1,7 +1,7 @@
 "use client"
 
-import { useState } from "react"
-import { CheckCircle2, Circle, Dumbbell } from "lucide-react"
+import { useState, useEffect } from "react"
+import { CheckCircle2, Circle, Dumbbell, Timer, ArrowRight } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -36,6 +36,15 @@ export default function WorkoutDay({
 
   const [restTime, setRestTime] = useState(120); 
   const [isResting, setIsResting] = useState(false);
+  
+  // Timer modal states
+  const [isTimerModalOpen, setIsTimerModalOpen] = useState(false)
+  const [timerCountdown, setTimerCountdown] = useState(60)
+  const [isTimerRunning, setIsTimerRunning] = useState(false)
+  const [nextExercise, setNextExercise] = useState<{ name: string; group: string } | null>(null)
+  const [showNextExercise, setShowNextExercise] = useState(false)
+  const [autoCloseCountdown, setAutoCloseCountdown] = useState(10)
+  const [isAutoClosing, setIsAutoClosing] = useState(false)
 
   const toggleGroup = (groupName: string) => {
     setExpandedGroups((prev) => ({
@@ -61,6 +70,102 @@ export default function WorkoutDay({
     setRestTime(120); // Reset to 2 minutes
     setIsResting(false);
   };
+
+  // Timer modal functions
+  const startRestTimer = (duration: number = 60) => {
+    setTimerCountdown(duration)
+    setIsTimerRunning(true)
+    setShowNextExercise(false)
+    setIsTimerModalOpen(true)
+  }
+
+  const findNextExercise = (currentExerciseId: string, currentSetIndex: number) => {
+    const parts = currentExerciseId.split('-')
+    const currentExerciseName = parts.slice(1).join('-')
+    
+    for (const group of workout.groups) {
+      for (let i = 0; i < group.exercises.length; i++) {
+        const exercise = group.exercises[i]
+        const exerciseId = `${dayNumber}-${exercise.name}`
+        
+        if (exerciseId === currentExerciseId) {
+          const numSets = Number.parseInt(exercise.sets.split("x")[0].trim())
+          
+          // If there are more sets in current exercise
+          if (currentSetIndex + 1 < numSets) {
+            return { name: exercise.name, group: group.name }
+          }
+          
+          // Look for next exercise in current group
+          if (i + 1 < group.exercises.length) {
+            return { name: group.exercises[i + 1].name, group: group.name }
+          }
+          
+          // Look for next group
+          const currentGroupIndex = workout.groups.findIndex(g => g.name === group.name)
+          if (currentGroupIndex + 1 < workout.groups.length) {
+            const nextGroup = workout.groups[currentGroupIndex + 1]
+            if (nextGroup.exercises.length > 0) {
+              return { name: nextGroup.exercises[0].name, group: nextGroup.name }
+            }
+          }
+          
+          return null
+        }
+      }
+    }
+    return null
+  }
+
+  // Timer countdown effect
+  useEffect(() => {
+    let interval: NodeJS.Timeout
+    
+    if (isTimerRunning && timerCountdown > 0) {
+      interval = setInterval(() => {
+        setTimerCountdown(prev => {
+          if (prev <= 1) {
+            setIsTimerRunning(false)
+            setShowNextExercise(true)
+            setIsAutoClosing(true)
+            setAutoCloseCountdown(10)
+            return 0
+          }
+          return prev - 1
+        })
+      }, 1000)
+    }
+    
+    return () => clearInterval(interval)
+  }, [isTimerRunning, timerCountdown])
+
+  // Auto-close countdown effect
+  useEffect(() => {
+    let interval: NodeJS.Timeout
+    
+    if (isAutoClosing && autoCloseCountdown > 0) {
+      interval = setInterval(() => {
+        setAutoCloseCountdown(prev => {
+          if (prev <= 1) {
+            closeTimerModal()
+            return 0
+          }
+          return prev - 1
+        })
+      }, 1000)
+    }
+    
+    return () => clearInterval(interval)
+  }, [isAutoClosing, autoCloseCountdown])
+
+  const closeTimerModal = () => {
+    setIsTimerModalOpen(false)
+    setIsTimerRunning(false)
+    setShowNextExercise(false)
+    setNextExercise(null)
+    setIsAutoClosing(false)
+    setAutoCloseCountdown(10)
+  }
 
   const openExerciseImageModal = (imageUrl: string, exerciseName: string) => {
     setCurrentExerciseImage({ url: imageUrl, name: exerciseName })
@@ -261,7 +366,14 @@ export default function WorkoutDay({
                                           variant={setData.completed ? "default" : "outline"}
                                           size="sm"
                                           className="w-full h-8"
-                                          onClick={() => toggleSetCompletion(exerciseId, index)}
+                                          onClick={() => {
+                                            toggleSetCompletion(exerciseId, index)
+                                            if (!setData.completed) {
+                                              const next = findNextExercise(exerciseId, index)
+                                              setNextExercise(next)
+                                              startRestTimer(Math.random() > 0.5 ? 60 : 90)
+                                            }
+                                          }}
                                         >
                                           {setData.completed ? (
                                             <span className="flex items-center gap-1">
@@ -308,6 +420,7 @@ export default function WorkoutDay({
           )
         })}
       </Accordion>
+      {/* Image Modal */}
       <Dialog open={isImageModalOpen} onOpenChange={setIsImageModalOpen}>
         <DialogContent className="sm:max-w-md md:max-w-xl">
           <DialogHeader>
@@ -323,6 +436,125 @@ export default function WorkoutDay({
               alt={currentExerciseImage.name}
               className="max-h-[70vh] object-contain rounded-md"
             />
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Timer Modal */}
+      <Dialog open={isTimerModalOpen} onOpenChange={closeTimerModal}>
+        <DialogContent className="sm:max-w-md">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2">
+              <Timer className="h-5 w-5" />
+              Tiempo de descanso
+            </DialogTitle>
+            <DialogDescription>
+              {isTimerRunning ? "Descansa entre series" : "¡Tiempo completado!"}
+            </DialogDescription>
+          </DialogHeader>
+          
+          <div className="flex flex-col items-center space-y-6 py-6">
+            {isTimerRunning ? (
+              <>
+                {/* Circular Progress Spinner */}
+                <div className="relative w-32 h-32">
+                  <svg className="w-32 h-32 transform -rotate-90" viewBox="0 0 100 100">
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      stroke="currentColor"
+                      strokeWidth="8"
+                      fill="none"
+                      className="text-muted-foreground/20"
+                    />
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      stroke="currentColor"
+                      strokeWidth="8"
+                      fill="none"
+                      strokeLinecap="round"
+                      className="text-primary"
+                      strokeDasharray={`${2 * Math.PI * 45}`}
+                      strokeDashoffset={`${2 * Math.PI * 45 * (1 - (60 - timerCountdown) / 60)}`}
+                      style={{
+                        transition: 'stroke-dashoffset 1s linear'
+                      }}
+                    />
+                  </svg>
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-3xl font-bold">{timerCountdown}</span>
+                  </div>
+                </div>
+                
+                <p className="text-center text-muted-foreground">
+                  Relájate y prepárate para la siguiente serie
+                </p>
+              </>
+            ) : (
+              <>
+                <div className="w-32 h-32 rounded-full bg-primary/10 flex items-center justify-center">
+                  <CheckCircle2 className="h-16 w-16 text-primary" />
+                </div>
+                
+                {showNextExercise && nextExercise && (
+                  <div className="text-center space-y-2">
+                    <p className="text-lg font-semibold text-primary">¡Siguiente ejercicio!</p>
+                    <div className="flex items-center gap-2 justify-center">
+                      <ArrowRight className="h-4 w-4" />
+                      <span className="font-medium">{nextExercise.name}</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Grupo: {nextExercise.group}
+                    </p>
+                    {isAutoClosing && (
+                      <p className="text-xs text-muted-foreground mt-2">
+                        Cerrando automáticamente en {autoCloseCountdown}s
+                      </p>
+                    )}
+                  </div>
+                )}
+                
+                {showNextExercise && !nextExercise && (
+                  <div className="text-center space-y-2">
+                    <p className="text-lg font-semibold text-primary">¡Entrenamiento completado!</p>
+                    <p className="text-sm text-muted-foreground">
+                      Has terminado todos los ejercicios del día
+                    </p>
+                    {isAutoClosing && (
+                      <p className="text-xs text-muted-foreground mt-2">
+                        Cerrando automáticamente en {autoCloseCountdown}s
+                      </p>
+                    )}
+                  </div>
+                )}
+              </>
+            )}
+          </div>
+          
+          <div className="flex gap-2">
+            {isTimerRunning && (
+              <Button 
+                variant="outline" 
+                onClick={() => {
+                  setIsTimerRunning(false)
+                  setShowNextExercise(true)
+                }}
+                className="flex-1"
+              >
+                Saltar descanso
+              </Button>
+            )}
+            
+            <Button 
+              onClick={closeTimerModal}
+              className="flex-1"
+              variant={isTimerRunning ? "outline" : "default"}
+            >
+              {isTimerRunning ? "Cerrar" : isAutoClosing ? `Continuar (${autoCloseCountdown}s)` : "Continuar"}
+            </Button>
           </div>
         </DialogContent>
       </Dialog>
