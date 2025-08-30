@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { CheckCircle2, Circle, Dumbbell, Timer, ArrowRight } from "lucide-react"
+import { CheckCircle2, Circle, Dumbbell, Timer, ArrowRight, PlayCircle } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
@@ -33,6 +33,7 @@ export default function WorkoutDay({
     url: "",
     name: "",
   })
+  const [currentVideoUrl, setCurrentVideoUrl] = useState<string | null>(null)
 
   const [restTime, setRestTime] = useState(120); 
   const [isResting, setIsResting] = useState(false);
@@ -167,9 +168,13 @@ export default function WorkoutDay({
     setAutoCloseCountdown(10)
   }
 
-  const openExerciseImageModal = (imageUrl: string, exerciseName: string) => {
-    setCurrentExerciseImage({ url: imageUrl, name: exerciseName })
+  const openImageModal = (url: string, name: string) => {
+    setCurrentExerciseImage({ url, name })
     setIsImageModalOpen(true)
+  }
+
+  const openVideoModal = (url: string) => {
+    setCurrentVideoUrl(url)
   }
 
   // Calculate progress for this workout day
@@ -258,47 +263,50 @@ export default function WorkoutDay({
                         className={cn("p-4 transition-colors", isExerciseCompleted ? "bg-primary/5" : "")}
                       >
                         <div className="grid grid-cols-12">
+                          <div className="col-span-12 mb-7 flex items-center gap-2">
+                            <Dumbbell
+                                className={cn(
+                                  "h-5 w-5",
+                                  isExerciseCompleted ? "text-primary" : "text-muted-foreground",
+                                )}
+                              />
+                            <div className="font-medium text-xl">{exercise.name}</div>
+                          </div>
                           <div  className="flex items-start justify-between mb-3 col-span-9 flex-col ">
                             <div className="flex items-start justify-between mb-3">
                               <div className="flex-1">
                                 <div className="flex items-center gap-2 mb-2">
-                                  <Dumbbell
-                                    className={cn(
-                                      "h-5 w-5",
-                                      isExerciseCompleted ? "text-primary" : "text-muted-foreground",
-                                    )}
-                                  />
+                                
                                   <div className="flex items-center gap-1">
-                                    <h3 className="font-medium">{exercise.name}</h3>
-                                    {exercise.imageUrl && (
-                                      <Button
-                                        variant="ghost"
-                                        size="icon"
-                                        className="h-6 w-6 rounded-full"
-                                        onClick={(e) => {
-                                          e.stopPropagation()
-                                          openExerciseImageModal(exercise.imageUrl || "", exercise.name)
-                                        }}
-                                      >
-                                        <span className="sr-only">Ver imagen del ejercicio</span>
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="16"
-                                          height="16"
-                                          viewBox="0 0 24 24"
-                                          fill="none"
-                                          stroke="currentColor"
-                                          strokeWidth="2"
-                                          strokeLinecap="round"
-                                          strokeLinejoin="round"
-                                          className="lucide lucide-image"
+                                  
+                                    <div className="flex space-x-1 ml-2">
+                                      {exercise.imageUrl && (
+                                        <Button
+                                          variant="ghost"
+                                          size="icon"
+                                          className="h-6 w-6"
+                                          onClick={(e) => {
+                                            e.stopPropagation()
+                                            openImageModal(exercise.imageUrl!, exercise.name)
+                                          }}
                                         >
-                                          <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
-                                          <circle cx="9" cy="9" r="2" />
-                                          <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                                        </svg>
-                                      </Button>
-                                    )}
+                                          <Dumbbell className="h-4 w-4" />
+                                        </Button>
+                                      )}
+                                      {exercise.videoUrl && (
+                                        <Button
+                                          variant="ghost"
+                                          size="icon"
+                                          className="h-6 w-6"
+                                          onClick={(e) => {
+                                            e.stopPropagation()
+                                            openVideoModal(exercise.videoUrl!)
+                                          }}
+                                        >
+                                          <PlayCircle className="h-4 w-4" />
+                                        </Button>
+                                      )}
+                                    </div>
                                   </div>
                                   <Badge variant="outline" className="text-xs">
                                     {exercise.type}
@@ -399,7 +407,7 @@ export default function WorkoutDay({
                                 <div className="ml-4 flex-shrink-0">
                                   <div
                                     className="relative h-72 w-72 overflow-hidden rounded-md cursor-pointer hover:opacity-80 transition-opacity"
-                                    onClick={() => openExerciseImageModal(exercise.imageUrl || "", exercise.name)}
+                                    onClick={() => openImageModal(exercise.imageUrl || "", exercise.name)}
                                   >
                                     <img
                                       src={exercise.imageUrl || "/placeholder.svg"}
@@ -555,6 +563,25 @@ export default function WorkoutDay({
             >
               {isTimerRunning ? "Cerrar" : isAutoClosing ? `Continuar (${autoCloseCountdown}s)` : "Continuar"}
             </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Video Modal */}
+      <Dialog open={!!currentVideoUrl} onOpenChange={(open) => !open && setCurrentVideoUrl(null)}>
+        <DialogContent className="max-w-3xl">
+          <DialogHeader>
+            <DialogTitle>Video del ejercicio</DialogTitle>
+          </DialogHeader>
+          <div className="aspect-video w-full">
+            {currentVideoUrl && (
+              <iframe
+                src={currentVideoUrl}
+                className="w-full h-full rounded-lg"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            )}
           </div>
         </DialogContent>
       </Dialog>

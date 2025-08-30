@@ -5,6 +5,7 @@ export interface Exercise {
   notes?: string
   type: string
   imageUrl?: string
+  videoUrl?: string
 }
 
 export interface ExerciseGroup {

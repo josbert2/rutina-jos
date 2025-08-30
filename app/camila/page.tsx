@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Progress } from "@/components/ui/progress"
 import { cn } from "@/lib/utils"
 import WorkoutDay from "@/components/workout-day"
-import { workoutData } from "@/lib/workout-data-camila"
+import { workoutData } from "@/lib/workout-data-camila-labra"
 import { ThemeToggle } from "@/components/theme-toggle"
 import type { ExerciseProgress } from "@/lib/types"
 
