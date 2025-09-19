@@ -574,14 +574,12 @@ export default function WorkoutDay({
             <DialogTitle>Video del ejercicio</DialogTitle>
           </DialogHeader>
           <div className="aspect-video w-full">
-            {currentVideoUrl && (
-              <iframe
-                src={currentVideoUrl}
-                className="w-full h-full rounded-lg"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            )}
+          
+              <video controls>
+                <source src={currentVideoUrl} type="video/mp4" style={{ width: '100%', height: 'auto' }} />
+                Tu navegador no soporta el elemento de video.
+              </video>
+         
           </div>
         </DialogContent>
       </Dialog>

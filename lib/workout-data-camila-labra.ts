@@ -1,5 +1,10 @@
 import type { WorkoutData } from "./types";
 
+
+// ejercicos pecho 
+import { videos, gifs } from './assets';
+
+
 export const workoutData: WorkoutData = {
   1: {
     title: "LUNES",
@@ -18,32 +23,35 @@ export const workoutData: WorkoutData = {
             rest: "90s",
             notes: "Compuesto principal; escápulas retraídas y control en la bajada.",
             type: "Compuesto",
-            imageUrl: "https://fitcron.com/wp-content/uploads/2021/04/17431301-Dumbbell-Twisting-Bench-Press_Upper-Arms_720.gif",
-            videoUrl: "https://www.youtube.com/embed/8iPEnn-ltC8"
+            imageUrl: "https://fitcron.com/wp-content/uploads/2021/03/02891301-Dumbbell-Bench-Press_Chest_720.gif",
+            videoUrl: videos.pechos
           },
           {
-            name: "Press inclinado con mancuernas (30–45°)",
+            name: "Aperturas planas con mancuernas",
             sets: "4 x 8-12",
             rest: "90s",
             notes: "Énfasis en pectoral superior; no bloquees codos arriba.",
             type: "Compuesto",
-            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Incline-Dumbbell-Press.gif"
+            imageUrl: "https://fitcron.com/wp-content/uploads/2021/03/03081301-Dumbbell-Fly_Chest-FIX_720.gif",
+            videoUrl: videos.pechos2
           },
           {
-            name: "Aperturas planas con mancuernas",
+            name: "Press cerrado",
             sets: "3 x 12-15",
             rest: "60s",
             notes: "Aislamiento; codos semi-flexionados, arco amplio.",
             type: "Aislado",
-            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-fly/dumbbell-fly-800.jpg"
+            imageUrl: "https://fitcron.com/wp-content/uploads/2021/03/36811301-Dumbbell-Squeeze-Bench-Press_Chest_720.gif",
+            videoUrl: videos.pechos3
           },
           {
-            name: "Press con agarre neutro con mancuernas",
+            name: "Apertura con agarre supino",
             sets: "3 x 10-12",
             rest: "60s",
             notes: "Mayor estabilidad de hombro y aducción final.",
             type: "Compuesto",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/dumbbell-neutral-grip-bench-press.png"
+            imageUrl: gifs.pecho[0],
+            videoUrl: ""
           }
         ]
       },
@@ -60,7 +68,7 @@ export const workoutData: WorkoutData = {
             imageUrl: "https://hips.hearstapps.com/hmg-prod/images/dumbbell-single-arm-row-1547729333.gif"
           },
           {
-            name: "Remo pecho apoyado en banco inclinado",
+            name: "Remo inclinado con 2 mancuernas (agarre neutro)",
             sets: "4 x 8-12",
             rest: "90s",
             notes: "Tira hacia la cadera; minimiza impulso.",
