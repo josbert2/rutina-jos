@@ -64,7 +64,7 @@ export const workoutData: WorkoutData = {
             rest: "90s",
             notes: "Dorsales y romboides con menos estrés lumbar",
             type: "Compuesto",
-            imageUrl: "https://static.strengthlevel.com/images/exercises/chest-supported-dumbbell-row/chest-supported-dumbbell-row-800.jpg"
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02P1beg0n2HN4vW8stEe9UmGXafiz0DYpFCZVLl"
           },
           {
             name: "Pájaros (reverse fly) inclinado",
@@ -72,7 +72,15 @@ export const workoutData: WorkoutData = {
             rest: "60s",
             notes: "Trapecio medio y deltoide posterior",
             type: "Aislado",
-            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-reverse-fly/dumbbell-reverse-fly-800.jpg"
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02PUBwxMfJJF1cmuXT0ljvDZpxfPR8Yk5nOtHA2"
+          },
+          {
+            name: "Pájaros (reverse fly) inclinado",
+            sets: "3 x 12-20",
+            rest: "60s",
+            notes: "Trapecio medio y deltoide posterior",
+            type: "Aislado",
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02PdrGzLIswVHzEke5T3Wu9g7Rs62JUO4hp0fqC"
           }
         ]
       }
@@ -137,12 +145,12 @@ export const workoutData: WorkoutData = {
         muscleGroup: "arms",
         exercises: [
           {
-            name: "Press francés acostado",
+            name: "Pullover",
             sets: "3 x 10-12",
             rest: "60s",
             notes: "Codos fijos",
             type: "Aislado",
-            imageUrl: "https://fitcron.com/wp-content/uploads/2021/04/03521301-Dumbbell-Neutral-Grip-Bench-Press_Upper-Arms_720.gif"
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02PCmjwM7bur9sgO1hpUZ4QlKRbfeS6wjtaiMcD"
           },
           {
             name: "Extensión sobre cabeza",
@@ -150,7 +158,15 @@ export const workoutData: WorkoutData = {
             rest: "60s",
             notes: "Cabeza larga del tríceps",
             type: "Aislado",
-            imageUrl: "https://cdn.shopify.com/s/files/1/0269/5551/3900/files/Dumbbell-Overhead-Triceps-Extension_99242f13-ab4d-4e77-be12-e0f180cc93ac_600x600.png?v=1612136962"
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02PjSyX65QJ4xsX1yePu7NpDFVGqctkYzT5d2wf"
+          },
+           {
+            name: "Patada de triceps",
+            sets: "2 x 10-12",
+            rest: "60s",
+            notes: "Cabeza larga del tríceps",
+            type: "Aislado",
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02PJek1bRxQGfIzOAulc1ENjYbgH8x9BDp4VUZa"
           }
         ]
       },
@@ -164,7 +180,7 @@ export const workoutData: WorkoutData = {
             rest: "60s",
             notes: "Supinación completa",
             type: "Aislado",
-            imageUrl: "https://eresfitness.com/wp-content/uploads/2019/05/Curl-de-biceps.gif"
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02P17nQBAM2HN4vW8stEe9UmGXafiz0DYpFCZVL"
           },
           {
             name: "Curl martillo",
@@ -172,7 +188,23 @@ export const workoutData: WorkoutData = {
             rest: "60s",
             notes: "Braquial / braquiorradial",
             type: "Aislado",
-            imageUrl: "https://adictosalgym.com/wp-content/uploads/2019/01/02981301-Dumbbell-Cross-Body-Hammer-Curl_Forearms_720.gif"
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02PogaSMaRX3LIthTZ45MW7sHdOlybADYk8n09N"
+          },
+          {
+            name: "Curl martillo",
+            sets: "3 x 8-12",
+            rest: "60s",
+            notes: "Braquial / braquiorradial",
+            type: "Aislado",
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02PJEHbD4kxQGfIzOAulc1ENjYbgH8x9BDp4VUZ"
+          },
+          {
+            name: "Curl martillo",
+            sets: "3 x 8-12",
+            rest: "60s",
+            notes: "Braquial / braquiorradial",
+            type: "Aislado",
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02PwlM7gzH6hPMSr8iEQJN2C5tH9uyOZaj0dxIX"
           }
         ]
       },
@@ -186,7 +218,31 @@ export const workoutData: WorkoutData = {
             rest: "60s",
             notes: "Flexores",
             type: "Aislado",
-            imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWuTs-br9LN67-WYxZg5dhD6QAylyvKGzJig&s"
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02PUakDvvJJF1cmuXT0ljvDZpxfPR8Yk5nOtHA2"
+          },
+          {
+            name: "Curl de muñeca",
+            sets: "2 x 12-15",
+            rest: "60s",
+            notes: "Flexores",
+            type: "Aislado",
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02PaE0HtIOjvg53MHZ4eBRd76PWJ2X9zAKGQiTO"
+          },
+          {
+            name: "Curl de muñeca",
+            sets: "2 x 12-15",
+            rest: "60s",
+            notes: "Flexores",
+            type: "Aislado",
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02PbT3Nct1XQU9SYgGIC7sRLFJMTNaAZjebifOh"
+          },
+          {
+            name: "Curl de muñeca",
+            sets: "2 x 12-15",
+            rest: "60s",
+            notes: "Flexores",
+            type: "Aislado",
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02P1eyP4E2HN4vW8stEe9UmGXafiz0DYpFCZVLl"
           }
         ]
       }
@@ -333,20 +389,36 @@ export const workoutData: WorkoutData = {
           }
         ]
       },
-      {
+        {
         name: "TRÍCEPS",
         muscleGroup: "arms",
         exercises: [
           {
-            name: "Press francés acostado",
+            name: "Pullover",
             sets: "3 x 10-12",
             rest: "60s",
-            notes: "Trabajo de la cabeza larga del tríceps",
+            notes: "Codos fijos",
             type: "Aislado",
-            imageUrl: "https://i.makeagif.com/media/10-19-2022/cBhLkv.gif"
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02PCmjwM7bur9sgO1hpUZ4QlKRbfeS6wjtaiMcD"
+          },
+          {
+            name: "Extensión sobre cabeza",
+            sets: "2 x 10-12",
+            rest: "60s",
+            notes: "Cabeza larga del tríceps",
+            type: "Aislado",
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02PjSyX65QJ4xsX1yePu7NpDFVGqctkYzT5d2wf"
+          },
+           {
+            name: "Patada de triceps",
+            sets: "2 x 10-12",
+            rest: "60s",
+            notes: "Cabeza larga del tríceps",
+            type: "Aislado",
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02PJek1bRxQGfIzOAulc1ENjYbgH8x9BDp4VUZa"
           }
         ]
-      }
+      },
     ]
   },
 
@@ -357,33 +429,41 @@ export const workoutData: WorkoutData = {
     warmup: "Cardio ligero + colgarse en barra 30 s + series suaves de remo y curl.",
     stretching: "Estiramiento dorsal colgado, bíceps en pared, antebrazo 20-25 s c/u.",
     groups: [
-      {
+        {
         name: "ESPALDA",
         muscleGroup: "back",
         exercises: [
           {
-            name: "Remo inclinado con mancuernas",
-            sets: "3 x 8-10",
+            name: "Remo 1 brazo en banco (c/l)",
+            sets: "4 x 8-12 por lado",
             rest: "90s",
-            notes: "Compuesto principal para dorsales y romboides",
+            notes: "Compuesto principal unilateral",
             type: "Compuesto",
-            imageUrl: "https://fitcron.com/wp-content/uploads/2021/04/03271301-Dumbbell-Incline-Row_Back_720.gif"
+            imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-S3N2Dd1AcjoYo0LCkta3M1J-OWpc2jDfiA&s"
           },
           {
-            name: "Pullover con mancuerna",
-            sets: "3 x 10-12",
-            rest: "60s",
-            notes: "Dorsales + expansión torácica (complemento sin jalones)",
+            name: "Remo pecho-apoyado en banco inclinado",
+            sets: "3 x 8-12",
+            rest: "90s",
+            notes: "Dorsales y romboides con menos estrés lumbar",
             type: "Compuesto",
-            imageUrl: "https://cambiandoeljuego.com/wp-content/uploads/2018/09/pullover.gif"
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02P1beg0n2HN4vW8stEe9UmGXafiz0DYpFCZVLl"
           },
           {
-            name: "Remo a una mano con mancuerna",
-            sets: "3 x 10-12",
+            name: "Pájaros (reverse fly) inclinado",
+            sets: "3 x 12-20",
             rest: "60s",
-            notes: "Dorsales, romboides y trapecio medio",
+            notes: "Trapecio medio y deltoide posterior",
             type: "Aislado",
-            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-row/dumbbell-row-800.jpg"
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02PUBwxMfJJF1cmuXT0ljvDZpxfPR8Yk5nOtHA2"
+          },
+          {
+            name: "Pájaros (reverse fly) inclinado",
+            sets: "3 x 12-20",
+            rest: "60s",
+            notes: "Trapecio medio y deltoide posterior",
+            type: "Aislado",
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02PdrGzLIswVHzEke5T3Wu9g7Rs62JUO4hp0fqC"
           }
         ]
       },
@@ -409,17 +489,41 @@ export const workoutData: WorkoutData = {
           }
         ]
       },
-      {
+       {
         name: "ANTEBRAZOS",
         muscleGroup: "arms",
         exercises: [
           {
-            name: "Curl inverso con mancuernas",
+            name: "Curl de muñeca",
             sets: "2 x 12-15",
             rest: "60s",
-            notes: "Extensores del antebrazo",
+            notes: "Flexores",
             type: "Aislado",
-            imageUrl: "https://i.pinimg.com/originals/d9/4f/9d/d94f9ddafd70a0725d160242a7aae78b.gif"
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02PUakDvvJJF1cmuXT0ljvDZpxfPR8Yk5nOtHA2"
+          },
+          {
+            name: "Curl de muñeca",
+            sets: "2 x 12-15",
+            rest: "60s",
+            notes: "Flexores",
+            type: "Aislado",
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02PaE0HtIOjvg53MHZ4eBRd76PWJ2X9zAKGQiTO"
+          },
+          {
+            name: "Curl de muñeca",
+            sets: "2 x 12-15",
+            rest: "60s",
+            notes: "Flexores",
+            type: "Aislado",
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02PbT3Nct1XQU9SYgGIC7sRLFJMTNaAZjebifOh"
+          },
+          {
+            name: "Curl de muñeca",
+            sets: "2 x 12-15",
+            rest: "60s",
+            notes: "Flexores",
+            type: "Aislado",
+            imageUrl: "https://0284i2z2w3.ufs.sh/f/NcbcfBhcN02P1eyP4E2HN4vW8stEe9UmGXafiz0DYpFCZVLl"
           }
         ]
       }
