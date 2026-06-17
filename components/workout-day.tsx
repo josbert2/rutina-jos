@@ -416,7 +416,22 @@ export default function WorkoutDay({
                                     />
                                   </div>
                                 </div>
-                              )}     
+                              )}
+                              {!exercise.imageUrl && exercise.videoUrl && (
+                                <div className="ml-4 flex-shrink-0">
+                                  <div className="relative h-72 w-72 overflow-hidden rounded-md">
+                                    <video
+                                      src={exercise.videoUrl}
+                                      autoPlay
+                                      loop
+                                      muted
+                                      playsInline
+                                      className="object-cover h-full w-full cursor-pointer hover:opacity-80 transition-opacity"
+                                      onClick={() => openVideoModal(exercise.videoUrl!)}
+                                    />
+                                  </div>
+                                </div>
+                              )}
                           </div>
                         </div>
                       </div>

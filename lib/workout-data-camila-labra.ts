@@ -1,55 +1,53 @@
 import type { WorkoutData } from "./types";
 
 
-// ejercicos pecho 
-import { videos, gifs } from './assets';
 
+// ─────────────────────────────────────────────────────────────────────────────
+// PLAN HIPERTROFIA · MANCUERNAS FIJAS ~10 kg + BANCO · NIVEL INTERMEDIO
+//
+// Principios aplicados:
+//  • Tiempo bajo tensión (TUT): tempo 3-1-2 en la mayoría de ejercicios
+//  • Progresión sin subir peso: más series, pausa, rango de movimiento, AMRAP
+//  • Variantes de push-up como "movimiento compuesto libre" de alta demanda
+//  • Superseries agonista-antagonista donde aplica para mayor volumen eficiente
+//  • Core integrado en días de pierna + viernes
+// ─────────────────────────────────────────────────────────────────────────────
 
 export const workoutData: WorkoutData = {
   1: {
-    title: "LUNES",
+    title: "MIÉRCOLES",
     subtitle: "Pecho y Espalda",
     dayOfWeek: 1,
-    warmup: "5–10 min cardio suave + movilidad de hombros/escápulas; 2 series ligeras de press y remo.",
-    stretching: "Pectoral en puerta y dorsal (postura del niño) 20–30 s c/u.",
+    warmup: "5–10 min cardio suave + círculos de hombros; 2 series ligeras de press y remo con la mancuerna más liviana.",
+    stretching: "Pectoral en puerta 30s + postura del niño (dorsal) 30s + ángel de pared 10 reps.",
     groups: [
       {
         name: "PECHO (A)",
         muscleGroup: "chest",
         exercises: [
           {
-            name: "Press banca mancuernas",
-            sets: "4 x 6-10",
+            name: "Press Plano con Mancuernas",
+            sets: "4 x 8-12",
             rest: "90s",
-            notes: "Rango de fuerza. Controla la bajada.",
+            notes: "Base del entrenamiento de pecho. Baja controlado, empuja explosivo. Core activo.",
             type: "Compuesto",
-            imageUrl: "https://fitcron.com/wp-content/uploads/2021/03/02891301-Dumbbell-Bench-Press_Chest_720.gif",
-            videoUrl: videos.pechos
+            videoUrl: "/camila/pecho/5---Press-Plano-con-Mancuernas.mp4"
           },
           {
-            name: "Press inclinado mancuernas",
-            sets: "3 x 8-12",
+            name: "Press con Mancuernas con Agarre Neutro",
+            sets: "4 x 10-12",
             rest: "90s",
-            notes: "Enfocado en pectoral superior.",
+            notes: "Palmas mirándose. Mayor estabilidad en hombros y activa más pecho interno.",
             type: "Compuesto",
-            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Incline-Dumbbell-Press.gif"
+            videoUrl: "/camila/pecho/4---Press-con-Mancuernas-con-Agarre-Neutro.mp4"
           },
           {
-            name: "Aperturas con mancuernas",
+            name: "Vuelo con Mancuernas",
             sets: "3 x 12-15",
             rest: "60s",
-            notes: "Estiramiento controlado.",
+            notes: "Aislamiento puro de pecho. Codos ligeramente flexionados, baja hasta sentir el estiramiento.",
             type: "Aislado",
-            imageUrl: "https://fitcron.com/wp-content/uploads/2021/03/03081301-Dumbbell-Fly_Chest-FIX_720.gif",
-            videoUrl: videos.pechos2
-          },
-          {
-            name: "Push-ups (lentas)",
-            sets: "2 x AMRAP (dejando 1-2 reps)",
-            rest: "60s",
-            notes: "Baja despacio, explota al subir.",
-            type: "Compuesto",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/push-up.png"
+            videoUrl: "/camila/pecho/2---Vuelo-con-Mancuernas.mp4"
           }
         ]
       },
@@ -58,36 +56,28 @@ export const workoutData: WorkoutData = {
         muscleGroup: "back",
         exercises: [
           {
-            name: "Remo a 1 mano con mancuerna (apoyado en banco)",
-            sets: "4 x 8-12 c/brazo",
+            name: "Remo con mancuernas con dos brazos anchos",
+            sets: "4 x 10-12",
             rest: "90s",
-            notes: "Codo pegado al cuerpo; torso estable.",
+            notes: "Codos abiertos hacia afuera a 45-60°. Enfocado en espalda superior, trapecio medio y romboides. Aprieta 1s arriba.",
             type: "Compuesto",
-            imageUrl: "https://hips.hearstapps.com/hmg-prod/images/dumbbell-single-arm-row-1547729333.gif"
+            videoUrl: "/camila/espalda/1---Remo-con-mancuernas-con-dos-brazos-anchos.mp4"
           },
           {
-            name: "Remo inclinado con mancuernas (2 manos)",
-            sets: "3 x 8-12",
+            name: "Remo con mancuernas con dos brazos estándar",
+            sets: "4 x 10-12",
             rest: "90s",
-            notes: "Tira hacia la cadera; minimiza impulso.",
+            notes: "Codos pegados al cuerpo. Trabaja dorsales y espalda media. Torso a 45° y control en la excéntrica.",
             type: "Compuesto",
-            imageUrl: "https://fitcron.com/wp-content/uploads/2021/04/03271301-Dumbbell-Incline-Row_Back_720.gif"
+            videoUrl: "/camila/espalda/2---Remo-con-mancuernas-con-dos-brazos-estándar.mp4"
           },
           {
-            name: "Pullover con mancuerna",
-            sets: "3 x 10-15",
+            name: "Elevación lateral inclinada (deltoide posterior)",
+            sets: "3 x 15-20",
             rest: "60s",
-            notes: "Estiramiento dorsales; codos semi-flexionados.",
-            type: "Compuesto",
-            imageUrl: "https://cambiandoeljuego.com/wp-content/uploads/2018/09/pullover.gif"
-          },
-          {
-            name: "Pájaros (deltoide posterior)",
-            sets: "2-3 x 15-20",
-            rest: "60s",
-            notes: "Deltoide posterior y trapecio medio.",
+            notes: "Inclinado hacia adelante. Codos ligeramente flexionados, eleva hacia los lados. Focaliza en deltoide posterior.",
             type: "Aislado",
-            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-reverse-fly/dumbbell-reverse-fly-800.jpg"
+            videoUrl: "/camila/espalda/5---Elevación-lateral-inclinada.mp4"
           }
         ]
       }
@@ -95,47 +85,39 @@ export const workoutData: WorkoutData = {
   },
 
   2: {
-    title: "MARTES",
+    title: "JUEVES",
     subtitle: "Hombros, Tríceps, Bíceps y Antebrazo",
     dayOfWeek: 2,
-    warmup: "5–10 min cardio + rotaciones de hombros; 2 series ligeras de elevaciones laterales y curl.",
-    stretching: "Deltoide (cruzado), tríceps tras nuca, bíceps en pared y antebrazo 15–20 s c/u.",
+    warmup: "5 min cardio + 10 rotaciones de hombro c/dirección + 2 series livianas de elevaciones y curl.",
+    stretching: "Deltoide cruzado 20s + tríceps tras nuca 20s + bíceps en pared 20s + antebrazo flexor/extensor 15s c/u.",
     groups: [
       {
         name: "HOMBROS (A)",
         muscleGroup: "shoulders",
         exercises: [
           {
-            name: "Press militar con mancuernas",
-            sets: "4 x 6-10",
+            name: "Press de hombros con mancuernas",
+            sets: "4 x 10-12",
             rest: "90s",
-            notes: "Core activo; no sobreextiendas.",
+            notes: "Movimiento principal de hombros. Core activo, empuja controlado hasta extensión completa.",
             type: "Compuesto",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/seated-dumbbell-shoulder-press.png"
+            videoUrl: "/camila/hombros/2---Press-de-hombros-con-mancuernas.mp4"
           },
           {
-            name: "Elevaciones laterales",
-            sets: "4 x 12-20",
+            name: "Elevación lateral con mancuernas",
+            sets: "4 x 12-15",
             rest: "60s",
-            notes: "Sin impulso; muñeca neutra a la altura de hombro.",
+            notes: "Deltoides lateral. Codos ligeramente flexionados, eleva hasta la altura de los hombros.",
             type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/03/lateral-raise.png"
+            videoUrl: "/camila/hombros/3---Elevación-lateral-con-mancuernas.mp4"
           },
           {
-            name: "Pájaros (deltoide posterior)",
+            name: "Elevación lateral inclinado sentado (deltoide posterior)",
             sets: "3 x 15-20",
             rest: "60s",
-            notes: "Deltoide posterior y trapecio medio.",
+            notes: "Sentado e inclinado hacia adelante. Focaliza en deltoide posterior sin trampas.",
             type: "Aislado",
-            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-reverse-fly/dumbbell-reverse-fly-800.jpg"
-          },
-          {
-            name: "Elevación frontal (mancuernas)",
-            sets: "2 x 10-15",
-            rest: "60s",
-            notes: "Controla arriba y abajo.",
-            type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/dumbbell-front-raise.png"
+            videoUrl: "/camila/hombros/5---Elevación-lateral-inclinado-sentado.mp4"
           }
         ]
       },
@@ -144,28 +126,20 @@ export const workoutData: WorkoutData = {
         muscleGroup: "arms",
         exercises: [
           {
-            name: "Press cerrado con mancuernas",
-            sets: "4 x 8-12",
+            name: "Extensión de Tríceps por Encima de la Cabeza con Dos Brazos",
+            sets: "4 x 10-12",
             rest: "60s",
-            notes: "Codos pegados al cuerpo; empuje vertical.",
-            type: "Compuesto",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/dumbbell-close-grip-press.png"
-          },
-          {
-            name: "Extensión sobre la cabeza (1 mancuerna)",
-            sets: "3 x 10-15",
-            rest: "60s",
-            notes: "Mantén codos hacia adelante (copa).",
+            notes: "Cabeza larga del tríceps bajo tensión máxima. Codos hacia adelante, baja hasta el fondo.",
             type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/overhead-triceps-extension.png"
+            videoUrl: "/camila/triceps/4---Extensión-de-Tríceps-por-Encima-de-la-Cabeza-con-Dos-Brazos.mp4"
           },
           {
-            name: "Patada de tríceps",
+            name: "Extensión de Tríceps Acostado con Mancuernas",
             sets: "3 x 12-15",
             rest: "60s",
-            notes: "Pausa breve en completa extensión.",
+            notes: "Tumbado en banco. Baja las mancuernas a los lados de la cabeza, codos fijos. Control total.",
             type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2021/10/dumbbell-kickback.png"
+            videoUrl: "/camila/triceps/2---Extensión-de-Tríceps-Acostado-con-Mancuernas.mp4"
           }
         ]
       },
@@ -174,28 +148,28 @@ export const workoutData: WorkoutData = {
         muscleGroup: "arms",
         exercises: [
           {
-            name: "Curl alterno con mancuernas",
-            sets: "4 x 8-12",
+            name: "Curl con barra EZ de pie",
+            sets: "4 x 10-12",
             rest: "60s",
-            notes: "Evita balanceo; supina al subir.",
+            notes: "Movimiento principal de bíceps. Agarre en la curva de la barra EZ, control total.",
             type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/alternating-dumbbell-curl.png"
+            videoUrl: "/camila/biceps/5---Curl-con-barra-EZ-de-pie.mp4"
           },
           {
-            name: "Curl martillo",
-            sets: "3 x 10-15",
+            name: "Curl martillo con mancuernas de pie",
+            sets: "3 x 12-15",
             rest: "60s",
-            notes: "Énfasis en braquial/braquiorradial.",
+            notes: "Agarre neutro (pulgar arriba). Trabaja braquial y braquiorradial. Da grosor al brazo.",
             type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/hammer-curl.png"
+            videoUrl: "/camila/biceps/4---Curl-Martillo-con-Mancuernas-de-Pie.mp4"
           },
           {
-            name: "Curl concentración",
+            name: "Curl con mancuernas estándar de pie",
             sets: "3 x 10-12",
             rest: "60s",
-            notes: "Codo en muslo interno; aísla al máximo.",
+            notes: "Clásico curl de bíceps. Supinación en la subida, baja controlado.",
             type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/dumbbell-concentration-curl.png"
+            videoUrl: "/camila/biceps/2---Curl-con-Mancuernas-Estándar-de-Pie.mp4"
           }
         ]
       },
@@ -204,28 +178,28 @@ export const workoutData: WorkoutData = {
         muscleGroup: "arms",
         exercises: [
           {
-            name: "Curl de muñeca (palmas arriba)",
-            sets: "3 x 15-25",
-            rest: "60s",
-            notes: "Flexores; recorrido completo.",
+            name: "Curl de muñeca (palmas arriba) – rango completo",
+            sets: "3 x 20-25",
+            rest: "45s",
+            notes: "Deja bajar la mancuerna hasta la punta de los dedos (rango completo) y cierra el puño al subir.",
             type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/wrist-curl.png"
+            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/06/Dumbbell-Wrist-Curl.gif"
           },
           {
             name: "Curl de muñeca reverso (palmas abajo)",
-            sets: "3 x 15-25",
-            rest: "60s",
-            notes: "Extensores; evita mover brazos.",
+            sets: "3 x 15-20",
+            rest: "45s",
+            notes: "Extensores del antebrazo. Movimiento pequeño y controlado.",
             type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/reverse-wrist-curl.png"
+            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/06/Dumbbell-Reverse-Wrist-Curl.gif"
           },
           {
-            name: "Farmer hold (sostener mancuernas pesado)",
-            sets: "3 x 30-60s",
+            name: "Farmer hold (isométrico de agarre)",
+            sets: "3 x 45-60s",
             rest: "60s",
-            notes: "Isométrico de agarre; hombros abajo y core firme.",
+            notes: "Agarra ambas mancuernas lo más fuerte posible. El agarre es el límite real de muchos levantadores.",
             type: "Isométrico",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/10/farmers-walk.png"
+            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2022/02/Farmers-walk_Cardio.gif"
           }
         ]
       }
@@ -233,39 +207,47 @@ export const workoutData: WorkoutData = {
   },
 
   3: {
-    title: "MIÉRCOLES",
+    title: "VIERNES",
     subtitle: "Piernas y Core",
     dayOfWeek: 3,
-    warmup: "5–10 min trote/soga + sentadillas y estocadas sin peso.",
-    stretching: "Cuádriceps, isquios, glúteos y pantorrillas 20–30 s; cobra para abdomen.",
+    warmup: "5–10 min trote en el lugar o soga + 10 sentadillas goblet vacías + 10 estocadas alternas sin peso.",
+    stretching: "Cuádriceps de pie 30s + isquio sentado 30s + glúteo figura 4 tumbado 30s + pantorrilla con pared 30s.",
     groups: [
       {
-        name: "CUÁDRICEPS",
+        name: "CUÁDRICEPS / GLÚTEOS",
         muscleGroup: "legs",
         exercises: [
           {
-            name: "Sentadilla goblet",
+            name: "Sentadilla goblet (pausa 3s abajo)",
             sets: "4 x 10-15",
             rest: "90s",
-            notes: "Torso erguido; baja hasta paralelo o más si es cómodo.",
+            notes: "Con 10 kg la pausa isométrica en la posición baja transforma este ejercicio. Torso erguido, rodillas afuera.",
             type: "Compuesto",
-            imageUrl: "https://cdn.shopify.com/s/files/1/0269/5551/3900/files/Dumbbell-Goblet-Squat_600x600.png?v=1612049778"
+            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Goblet-Squat.gif"
           },
           {
-            name: "Zancadas caminando con mancuernas",
-            sets: "3 x 10-12 c/pierna",
+            name: "Sentadilla búlgara con mancuernas",
+            sets: "4 x 8-10 c/pierna",
             rest: "90s",
-            notes: "Paso largo; rodilla estable.",
+            notes: "Pie trasero elevado en banco. Es el ejercicio de pierna unilateral más efectivo. Con 10 kg es suficientemente difícil.",
             type: "Compuesto",
-            imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGTw98CLW2aEoz6K7f4-qHVtZoCAD-5Dl63g&s"
+            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Lunges.gif"
           },
           {
-            name: "Step-up al banco con mancuernas",
+            name: "Zancadas reversas (paso atrás)",
             sets: "3 x 10-12 c/pierna",
-            rest: "90s",
-            notes: "Empuja con la pierna de apoyo; controla la bajada.",
+            rest: "75s",
+            notes: "Más amigable para rodillas que la zancada frontal. Baja el torso lentamente.",
             type: "Compuesto",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/dumbbell-step-up.png"
+            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Lunges.gif"
+          },
+          {
+            name: "Step-up explosivo al banco",
+            sets: "3 x 8-10 c/pierna",
+            rest: "75s",
+            notes: "Sube explosivo (potencia), baja lento (3s). La combinación potencia + excéntrica maximiza hipertrofia.",
+            type: "Compuesto",
+            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Step-up.gif"
           }
         ]
       },
@@ -274,28 +256,36 @@ export const workoutData: WorkoutData = {
         muscleGroup: "legs",
         exercises: [
           {
-            name: "Peso muerto rumano con mancuernas",
-            sets: "4 x 8-12",
+            name: "Peso muerto rumano mancuernas (tempo 4-1-1)",
+            sets: "4 x 10-12",
             rest: "90s",
-            notes: "Caderas atrás; espalda neutra.",
+            notes: "Baja en 4 seg sintiendo cada cm del estiramiento. La excéntrica larga es donde ocurre la hipertrofia de isquios.",
             type: "Compuesto",
-            imageUrl: "https://static.wixstatic.com/media/c94d75_ed1cfc9ed62b4864aa554972e6b974f4~mv2.gif"
+            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Romanian-Deadlift.gif"
           },
           {
-            name: "Hip thrust con mancuerna en banco",
-            sets: "3 x 10-12",
-            rest: "90s",
-            notes: "Pausa 1s en máxima contracción.",
+            name: "Hip thrust con mancuerna (pausa 2s arriba)",
+            sets: "4 x 12-15",
+            rest: "75s",
+            notes: "Hombros en banco, mancuerna en caderas. Aprieta glúteo al máximo y sostén 2s.",
             type: "Compuesto",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/05/dumbbell-hip-thrust.png"
+            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Romanian-Deadlift.gif"
           },
           {
-            name: "Peso muerto a 1 pierna con mancuerna",
-            sets: "3 x 10-12 c/pierna",
-            rest: "90s",
-            notes: "Equilibrio y control; cadera cuadrada.",
+            name: "Good morning con mancuernas",
+            sets: "3 x 12-15",
+            rest: "75s",
+            notes: "Mancuernas en hombros (o sostenidas al pecho). Bisagra de cadera con rodillas semi-flexionadas. Activa glúteo e isquio.",
             type: "Compuesto",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/single-leg-rdl.png"
+            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Romanian-Deadlift.gif"
+          },
+          {
+            name: "Peso muerto a 1 pierna",
+            sets: "3 x 10 c/pierna",
+            rest: "75s",
+            notes: "Control total. Si balanceas pierdes el beneficio. Cadera cuadrada en todo momento.",
+            type: "Compuesto",
+            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Single-Leg-Romanian-Deadlift.gif"
           }
         ]
       },
@@ -304,28 +294,20 @@ export const workoutData: WorkoutData = {
         muscleGroup: "legs",
         exercises: [
           {
-            name: "Elevación de talones de pie con mancuernas",
-            sets: "4 x 12-20",
+            name: "Elevación de talones en escalón (rango completo)",
+            sets: "4 x 15-20",
             rest: "60s",
-            notes: "Pausa arriba; rango completo.",
+            notes: "Baja el talón por debajo del nivel del escalón. El rango completo es 3x más efectivo que solo subir.",
             type: "Aislado",
-            imageUrl: "https://www.thingys.com.ar/gymapps/tutorial/pant_pie.gif"
+            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Calf-Raise.gif"
           },
           {
-            name: "Elevación de talones sentado (mancuernas en muslos)",
-            sets: "3 x 12-15",
+            name: "Elevación de talones sentado (sóleo)",
+            sets: "3 x 15-20",
             rest: "60s",
-            notes: "Énfasis sóleo; ritmo controlado.",
+            notes: "Mancuernas sobre los muslos. Rodilla a 90°. El sóleo se desarrolla mejor en posición sentada.",
             type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/seated-calf-raise-dumbbells.png"
-          },
-          {
-            name: "Elevación de talones en escalón",
-            sets: "3 x 12-20",
-            rest: "60s",
-            notes: "Mayor estiramiento; evita rebote.",
-            type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/standing-calf-raise.png"
+            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/06/Seated-Calf-Raise-dumbbell.gif"
           }
         ]
       },
@@ -334,28 +316,36 @@ export const workoutData: WorkoutData = {
         muscleGroup: "core",
         exercises: [
           {
-            name: "Crunch en banco/suelo",
+            name: "Crunch con mancuerna en pecho",
             sets: "3 x 15-20",
-            rest: "45-60s",
-            notes: "Exhala al subir; no tironees cuello.",
+            rest: "45s",
+            notes: "Sostén una mancuerna contra el pecho para añadir resistencia. Exhala en la contracción.",
             type: "Aislado",
-            imageUrl: "/abdomen/1.gif"
+            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Crunch.gif"
           },
           {
-            name: "Elevaciones de piernas en banco/suelo",
+            name: "Elevaciones de piernas en banco",
             sets: "3 x 12-15",
-            rest: "45-60s",
-            notes: "Lumbares pegadas; controla bajada.",
+            rest: "45s",
+            notes: "Lumbares pegadas al banco. Baja sin tocar. Opcional: sujeta mancuerna ligera entre pies.",
             type: "Aislado",
-            imageUrl: "/abdomen/2.gif"
+            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Leg-Raise.gif"
           },
           {
-            name: "Plancha frontal",
-            sets: "3 x 30-45s",
-            rest: "30-45s",
-            notes: "Isométrico; glúteos y abdomen firmes.",
+            name: "Plancha con toque de hombro",
+            sets: "3 x 10 toques c/lado",
+            rest: "45s",
+            notes: "Desde plancha, toca hombro contrario alternando. Evita rotar las caderas. Core antirotacional.",
             type: "Isométrico",
-            imageUrl: "/abdomen/3.gif"
+            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Plank.gif"
+          },
+          {
+            name: "Dead bug (insecto muerto)",
+            sets: "3 x 8-10 c/lado",
+            rest: "45s",
+            notes: "Tumbado boca arriba, extiende brazo y pierna opuesta lentamente. Lumbar pegada al suelo siempre.",
+            type: "Isométrico",
+            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Plank.gif"
           }
         ]
       }
@@ -363,47 +353,39 @@ export const workoutData: WorkoutData = {
   },
 
   4: {
-    title: "JUEVES",
+    title: "SÁBADO",
     subtitle: "Pecho, Hombros y Tríceps",
     dayOfWeek: 4,
-    warmup: "Cardio 5–10 min + series ligeras de press y elevaciones.",
-    stretching: "Pectoral, deltoide anterior y tríceps 20–25 s c/u.",
+    warmup: "5–10 min cardio + series ligeras de press inclinado y elevaciones laterales.",
+    stretching: "Pectoral en puerta 25s + deltoide anterior 20s + tríceps tras nuca 20s.",
     groups: [
       {
         name: "PECHO (B)",
         muscleGroup: "chest",
         exercises: [
           {
-            name: "Press inclinado mancuernas",
+            name: "Press Inverso con Mancuernas",
+            sets: "4 x 10-12",
+            rest: "90s",
+            notes: "Variación clavicular. Si te acomoda muñeca/hombro. Enfocado en pecho superior.",
+            type: "Compuesto",
+            videoUrl: "/camila/pecho/3---Press-Inverso-con-Mancuernas.mp4"
+          },
+          {
+            name: "Jersey con Mancuernas (Pullover)",
+            sets: "3 x 12-15",
+            rest: "75s",
+            notes: "Estiramiento profundo del pecho y dorsales. Baja lento, codos semi-flexionados.",
+            type: "Compuesto",
+            videoUrl: "/camila/pecho/1---Jersey-con-Mancuernas.mp4"
+          },
+          {
+            name: "Press Plano con Mancuernas",
             sets: "4 x 8-12",
             rest: "90s",
-            notes: "Enfocado en pectoral superior.",
+            notes: "Base de pecho. Alterna con agarre neutro si prefieres variar entre semanas.",
             type: "Compuesto",
-            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Incline-Dumbbell-Press.gif"
-          },
-          {
-            name: "Floor press (press en el suelo)",
-            sets: "3 x 8-12",
-            rest: "90s",
-            notes: "Pausa ligera en el suelo.",
-            type: "Compuesto",
-            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-floor-press/dumbbell-floor-press-800.jpg"
-          },
-          {
-            name: "Press banca agarre neutro (palmas mirándose)",
-            sets: "3 x 10-12",
-            rest: "90s",
-            notes: "Codos pegados al cuerpo.",
-            type: "Compuesto",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/neutral-grip-dumbbell-bench-press.png"
-          },
-          {
-            name: "Aperturas o push-ups",
-            sets: "2 x 12-15 / AMRAP",
-            rest: "60s",
-            notes: "Elige el que prefieras para terminar.",
-            type: "Compuesto",
-            imageUrl: "https://fitcron.com/wp-content/uploads/2021/03/03081301-Dumbbell-Fly_Chest-FIX_720.gif"
+            videoUrl: "/camila/pecho/5---Press-Plano-con-Mancuernas.mp4"
           }
         ]
       },
@@ -412,36 +394,28 @@ export const workoutData: WorkoutData = {
         muscleGroup: "shoulders",
         exercises: [
           {
-             name: "Press Arnold",
-             sets: "4 x 8-12",
-             rest: "90s",
-             notes: "No arquees zona lumbar; abdomen activo.",
-             type: "Compuesto",
-             imageUrl: "https://fitcron.com/wp-content/uploads/2021/04/02871301-Dumbbell-Arnold-Press-II_Shoulders_720.gif"
+            name: "Remo vertical con mancuernas sentado (controlado)",
+            sets: "4 x 10-12",
+            rest: "90s",
+            notes: "Sentado para evitar impulso. Codos hacia arriba, controlado. Trabaja deltoides y trapecios.",
+            type: "Compuesto",
+            videoUrl: "/camila/hombros/1---Remo-vertical-con-mancuernas-sentado.mp4"
           },
           {
-            name: "Elevaciones laterales (pausa 1 seg arriba)",
-            sets: "4 x 12-20",
+            name: "Elevación lateral con mancuernas",
+            sets: "3 x 12-15",
             rest: "60s",
-            notes: "Pausa en la contracción máxima.",
+            notes: "Repetir para darle volumen al deltoide lateral. Control total, sin balanceo.",
             type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/03/lateral-raise.png"
+            videoUrl: "/camila/hombros/3---Elevación-lateral-con-mancuernas.mp4"
           },
           {
-            name: "Pájaros (más control, lento)",
-            sets: "3 x 15-20",
+            name: "Elevación frontal con mancuernas con dos brazos",
+            sets: "3 x 10-12",
             rest: "60s",
-            notes: "Deltoide posterior; movimiento fluido.",
+            notes: "Opcional / volumen bajo. Ambos brazos al mismo tiempo, sube hasta la altura de los hombros.",
             type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/reverse-dumbbell-fly-incline-bench.png"
-          },
-          {
-            name: "\"Y-raise\" en banco inclinado / inclinado leve",
-            sets: "2-3 x 12-15",
-            rest: "60s",
-            notes: "Trapecio inferior y deltoides.",
-            type: "Aislado",
-            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/06/Incline-Available-Dumbbell-Y-Raise.gif"
+            videoUrl: "/camila/hombros/4---Elevación-frontal-con-mancuernas-con-dos-brazos.mp4"
           }
         ]
       },
@@ -450,76 +424,60 @@ export const workoutData: WorkoutData = {
         muscleGroup: "arms",
         exercises: [
           {
-            name: "Fondos entre bancos (bench dips)",
-            sets: "4 x 8-15",
+            name: "Extensión Cruzada con Mancuernas con Agarre Neutral",
+            sets: "3 x 12-15",
             rest: "60s",
-            notes: "Baja controlado; codos hacia atrás.",
-            type: "Compuesto",
-            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Bench-Dips.gif"
+            notes: "Agarre neutro crosse. Complemento y bombeo para tríceps. Controla la excéntrica.",
+            type: "Aislado",
+            videoUrl: "/camila/triceps/1---Extensión-Cruzada-con-Mancuernas-con-Agarre-Neutral.mp4"
           },
           {
-            name: "Skull crushers (extensión acostado con mancuernas)",
-            sets: "3 x 10-15",
+            name: "Patada con Mancuernas",
+            sets: "3 x 12-15",
             rest: "60s",
-            notes: "Lleva las mancuernas a los lados de la cabeza.",
+            notes: "Extiende completamente el codo y aprieta el tríceps arriba. Bombeo final.",
             type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/lying-triceps-extension.png"
-          },
-          {
-            name: "Press francés sentado (1 o 2 mancuernas)",
-            sets: "2-3 x 10-15",
-            rest: "60s",
-            notes: "Estira bien abajo; cuidado con el cuello.",
-            type: "Aislado",
-            imageUrl: "https://www.entrenador.fit/wp-content/uploads/Extensi%C3%B3n-de-triceps-sentado-con-mancuernas.gif"
+            videoUrl: "/camila/triceps/3---Patada-con-Mancuernas.mp4"
           }
         ]
-      },
+      }
     ]
   },
 
   5: {
-    title: "VIERNES",
+    title: "DOMINGO",
     subtitle: "Espalda, Bíceps y Antebrazo",
     dayOfWeek: 5,
-    warmup: "Cardio ligero + 2 series suaves de remo y curl.",
-    stretching: "Dorsal, bíceps y antebrazo 20–25 s c/u.",
+    warmup: "5 min cardio ligero + 2 series livianas de remo y curl.",
+    stretching: "Dorsal (postura del niño) 30s + bíceps en pared 20s + antebrazo flexor/extensor 20s c/u.",
     groups: [
       {
         name: "ESPALDA (B)",
         muscleGroup: "back",
         exercises: [
           {
-            name: "Remo pecho apoyado en banco (chest-supported)",
-            sets: "4 x 8-12",
+            name: "Remo con mancuernas con dos brazos por debajo de la mano (supino)",
+            sets: "4 x 10-12",
             rest: "90s",
-            notes: "Pecho apoyado; minimiza balanceo.",
+            notes: "Agarre supino (palmas hacia arriba). Enfocado en dorsales e inferiores de la espalda. Codos pegados al cuerpo.",
             type: "Compuesto",
-            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Chest-Supported-Dumbbell-Row.gif"
+            videoUrl: "/camila/espalda/3---Remo-con-mancuernas-con-dos-brazos-por-debajo-de-la-mano.mp4"
           },
           {
-            name: "Remo a 1 mano con pausa arriba (2 seg)",
-            sets: "3 x 10-12",
+            name: "Remo con mancuernas con dos brazos con agarre neutro",
+            sets: "4 x 10-12",
             rest: "90s",
-            notes: "Pausa en la contracción máxima.",
+            notes: "Agarre neutro (palmas mirándose). Trabaja dorsales y espalda general. Controla la excéntrica.",
             type: "Compuesto",
-            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-row/dumbbell-row-800.jpg"
+            videoUrl: "/camila/espalda/4---Remo-con-mancuernas-con-dos-brazos-con-agarre-neutro.mp4"
           },
           {
-            name: "Pull-over con mancuerna (más lento)",
-            sets: "2-3 x 12-15",
-            rest: "60s",
-            notes: "Controla la excéntrica (bajada).",
+            name: "Pullover con mancuerna",
+            sets: "3 x 12-15",
+            rest: "75s",
+            notes: "Complemento para no hacer solo remos. Baja lento sintiendo el estiramiento dorsal. Codos semi-flexionados.",
             type: "Compuesto",
-            imageUrl: "https://cambiandoeljuego.com/wp-content/uploads/2018/09/pullover.gif"
-          },
-          {
-            name: "Encogimientos (trapecio) con mancuernas",
-            sets: "3 x 12-20",
-            rest: "60s",
-            notes: "Sube recto y pausa arriba.",
-            type: "Aislado",
-            imageUrl: "https://fitcron.com/wp-content/uploads/2021/04/03291301-Dumbbell-Incline-Shrug_Back_720.gif"
+            imageUrl: "/camila/espalda/6---Pullover-con-mancuerna.jpg"
           }
         ]
       },
@@ -528,28 +486,28 @@ export const workoutData: WorkoutData = {
         muscleGroup: "arms",
         exercises: [
           {
-            name: "Curl inclinado en banco",
-            sets: "4 x 8-12",
-            rest: "60s",
-            notes: "Gran estiramiento; espalda pegada al banco.",
-            type: "Aislado",
-            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Incline-Dumbbell-Curl.gif"
-          },
-          {
-            name: "Curl tipo \"spider\" (pecho apoyado en banco)",
-            sets: "3 x 10-15",
-            rest: "60s",
-            notes: "Brazos colgando verticales; aísla pico del bíceps.",
-            type: "Aislado",
-            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2022/02/Dumbbell-Spider-Curl.gif"
-          },
-          {
-            name: "Curl reverso (antebrazo)",
+            name: "Curl con barra de pie con agarre inverso",
             sets: "3 x 12-15",
             rest: "60s",
-            notes: "Agarre prono; trabaja antebrazos y braquial.",
+            notes: "Agarre prono (palmas abajo). Trabaja braquial y braquiorradial. Da grosor real al brazo.",
             type: "Aislado",
-            imageUrl: "https://i.pinimg.com/originals/d9/4f/9d/d94f9ddafd70a0725d160242a7aae78b.gif"
+            videoUrl: "/camila/biceps/3---Curl-con-Barra-de-Pie-con-Agarre-Inverso.mp4"
+          },
+          {
+            name: "Curl con mancuernas de pie con dos brazos",
+            sets: "3 x 10-12",
+            rest: "60s",
+            notes: "Ambos brazos al mismo tiempo, juntando mancuernas. Buen bombeo después de espalda.",
+            type: "Aislado",
+            videoUrl: "/camila/biceps/1---Curl-con-Mancuernas-de-Pie-con-Dos-Brazos.mp4"
+          },
+          {
+            name: "Curl con mancuernas estándar de pie (ligero / bombeo)",
+            sets: "3 x 12-15",
+            rest: "60s",
+            notes: "Ligero para bombeo final. Control total, sin impulso.",
+            type: "Aislado",
+            videoUrl: "/camila/biceps/2---Curl-con-Mancuernas-Estándar-de-Pie.mp4"
           }
         ]
       },
@@ -558,28 +516,28 @@ export const workoutData: WorkoutData = {
         muscleGroup: "arms",
         exercises: [
           {
-            name: "Curl martillo (enfocado lento)",
-            sets: "3 x 10-15",
-            rest: "60s",
-            notes: "Controla la bajada.",
+            name: "Pronación/supinación con mancuerna",
+            sets: "3 x 15 c/dirección",
+            rest: "45s",
+            notes: "Codo a 90°, gira la muñeca lentamente. Trabaja pronadores y supinadores (músculos olvidados del antebrazo).",
             type: "Aislado",
-            imageUrl: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/hammer-curl.png"
+            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2025/07/wrist-rotations.gif"
           },
           {
-            name: "Pronación/supinación (girar mancuerna)",
-            sets: "3 x 12-20 c/lado",
-            rest: "60s",
-            notes: "Gira la muñeca controladamente con peso ligero.",
+            name: "Curl de muñeca rango completo (dedos abiertos)",
+            sets: "3 x 20",
+            rest: "45s",
+            notes: "Deja la mancuerna rodar hasta la punta de los dedos en cada rep. Rango completo = máxima hipertrofia.",
             type: "Aislado",
-            imageUrl: "https://makeagif.com/media/9-10-2015/R6wRqD.gif"
+            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/06/Dumbbell-Wrist-Curl.gif"
           },
           {
-            name: "Dead hang (colgado) si tienes barra / farmer hold",
-            sets: "3 x 30-60s",
+            name: "Farmer hold (isométrico de agarre)",
+            sets: "3 x 45-60s",
             rest: "60s",
-            notes: "Cuelga de la barra o sostén mancuernas pesadas.",
+            notes: "Termina la semana con un hold fuerte. El agarre potente protege los codos y muñecas a largo plazo.",
             type: "Isométrico",
-            imageUrl: "https://gymvisual.com/img/p/2/2/4/6/9/22469.gif"
+            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2022/02/Farmers-walk_Cardio.gif"
           }
         ]
       }

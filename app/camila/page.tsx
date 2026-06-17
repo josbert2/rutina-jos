@@ -18,8 +18,10 @@ export default function WorkoutTracker() {
   // Get current day of week (1-5 for Monday-Friday)
   useEffect(() => {
     const today = new Date().getDay()
-    // Convert Sunday (0) to 5, and Saturday (6) to 5 (Friday)
-    const mappedDay = today === 0 || today === 6 ? 5 : today
+    // Map: Wed(3)->1, Thu(4)->2, Fri(5)->3, Sat(6)->4, Sun(0)->5
+    // Mon(1) and Tue(2) default to 1 (next session)
+    const dayMap: Record<number, number> = { 3: 1, 4: 2, 5: 3, 6: 4, 0: 5, 1: 1, 2: 1 }
+    const mappedDay = dayMap[today] || 1
     setCurrentDay(mappedDay)
 
     // Cargar progreso del localStorage si existe
@@ -148,7 +150,7 @@ export default function WorkoutTracker() {
           >
             <div className="text-center">
               <div className="text-xs text-muted-foreground">
-                {["LUNES", "MARTES", "MIÉRCOLES", "JUEVES", "VIERNES"][day - 1]}
+                {["MIÉRCOLES", "JUEVES", "VIERNES", "SÁBADO", "DOMINGO"][day - 1]}
               </div>
               <Progress value={calculateProgress(day)} className="h-1 mt-2" />
             </div>
