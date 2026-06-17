@@ -178,28 +178,36 @@ export const workoutData: WorkoutData = {
         muscleGroup: "arms",
         exercises: [
           {
-            name: "Curl de muñeca (palmas arriba) – rango completo",
-            sets: "3 x 20-25",
+            name: "Curl de muñeca con barra (palmas arriba)",
+            sets: "3 x 20",
             rest: "45s",
-            notes: "Deja bajar la mancuerna hasta la punta de los dedos (rango completo) y cierra el puño al subir.",
+            notes: "Antebrazos apoyados en el banco. Deja bajar la barra hasta la punta de los dedos y cierra el puño al subir. Flexores.",
             type: "Aislado",
-            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/06/Dumbbell-Wrist-Curl.gif"
+            imageUrl: "/camila/antebrazo/curl-barra-palmas-arriba.png"
           },
           {
-            name: "Curl de muñeca reverso (palmas abajo)",
-            sets: "3 x 15-20",
+            name: "Curl de muñeca inverso con barra (palmas abajo)",
+            sets: "3 x 15",
             rest: "45s",
-            notes: "Extensores del antebrazo. Movimiento pequeño y controlado.",
+            notes: "Antebrazos apoyados en el banco. Extensores. Movimiento pequeño y controlado, sin balanceo.",
             type: "Aislado",
-            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2021/06/Dumbbell-Reverse-Wrist-Curl.gif"
+            imageUrl: "/camila/antebrazo/curl-inverso-barra.png"
           },
           {
-            name: "Farmer hold (isométrico de agarre)",
-            sets: "3 x 45-60s",
-            rest: "60s",
-            notes: "Agarra ambas mancuernas lo más fuerte posible. El agarre es el límite real de muchos levantadores.",
-            type: "Isométrico",
-            imageUrl: "https://fitnessprogramer.com/wp-content/uploads/2022/02/Farmers-walk_Cardio.gif"
+            name: "Curl de muñeca inverso con mancuernas",
+            sets: "3 x 15",
+            rest: "45s",
+            notes: "Antebrazos apoyados en el banco, palmas abajo. Extensores con mancuernas para trabajar cada lado por separado.",
+            type: "Aislado",
+            imageUrl: "/camila/antebrazo/curl-inverso-mancuerna.png"
+          },
+          {
+            name: "Curl de muñeca con mancuernas (palmas arriba)",
+            sets: "3 x 20",
+            rest: "45s",
+            notes: "Antebrazos apoyados en el banco, palmas arriba. Rango completo: deja rodar hasta los dedos y cierra el puño. Flexores.",
+            type: "Aislado",
+            imageUrl: "/camila/antebrazo/curl-mancuerna-palmas-arriba.png"
           }
         ]
       }
@@ -491,7 +499,7 @@ export const workoutData: WorkoutData = {
             rest: "60s",
             notes: "Agarre prono (palmas abajo). Trabaja braquial y braquiorradial. Da grosor real al brazo.",
             type: "Aislado",
-            videoUrl: "/camila/biceps/3---Curl-con-Barra-de-Pie-con-Agarre-Inverso.mp4"
+            videoUrl: "/camila/biceps/domingo-1.mp4"
           },
           {
             name: "Curl con mancuernas de pie con dos brazos",
@@ -499,7 +507,7 @@ export const workoutData: WorkoutData = {
             rest: "60s",
             notes: "Ambos brazos al mismo tiempo, juntando mancuernas. Buen bombeo después de espalda.",
             type: "Aislado",
-            videoUrl: "/camila/biceps/1---Curl-con-Mancuernas-de-Pie-con-Dos-Brazos.mp4"
+            videoUrl: "/camila/biceps/domingo-2.mp4"
           },
           {
             name: "Curl con mancuernas estándar de pie (ligero / bombeo)",
@@ -507,7 +515,15 @@ export const workoutData: WorkoutData = {
             rest: "60s",
             notes: "Ligero para bombeo final. Control total, sin impulso.",
             type: "Aislado",
-            videoUrl: "/camila/biceps/2---Curl-con-Mancuernas-Estándar-de-Pie.mp4"
+            videoUrl: "/camila/biceps/domingo-3.mp4"
+          },
+          {
+            name: "Curl de bíceps (variante 4)",
+            sets: "3 x 12",
+            rest: "60s",
+            notes: "Cuarto video de la serie. Ajustá el nombre según la técnica del video.",
+            type: "Aislado",
+            videoUrl: "/camila/biceps/domingo-4.mp4"
           }
         ]
       },

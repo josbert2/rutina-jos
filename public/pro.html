@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>Mi Rutina</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#14110f; --panel:#1d1916; --panel2:#241f1b; --line:#3a322c;
+    --ink:#f2ece4; --dim:#9b9089; --dim2:#8a7f74;
+    --amber:#e8a23d; --amber-d:#b97e26; --green:#6fae5e; --red:#c2603f;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,sans-serif;}
+  body{padding-bottom:48px;}
+  .wrap{max-width:560px;margin:0 auto;padding:0 14px;}
+
+  header{padding:26px 0 14px;position:relative;}
+  .kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--amber);font-weight:700;}
+  h1{font-family:"Barlow Condensed","Inter",sans-serif;font-weight:700;
+    font-size:40px;line-height:.92;margin:6px 0 0;letter-spacing:-.01em;}
+  h1 span{color:var(--dim2);font-weight:600;}
+
+  .tabs{display:flex;gap:6px;margin:18px 0 4px;position:sticky;top:0;
+    background:var(--bg);padding:8px 0;z-index:20;}
+  .tab{flex:1;padding:11px 3px;border:1px solid var(--line);background:var(--panel);
+    color:var(--dim);border-radius:11px;font-size:11.5px;font-weight:600;text-align:center;
+    cursor:pointer;transition:.15s;line-height:1.15;}
+  .tab.on{background:var(--amber);color:#1a1410;border-color:var(--amber);}
+
+  .meta{font-size:12px;color:var(--dim2);line-height:1.5;margin:2px 2px 14px;}
+
+  .day{margin-bottom:14px;border:1px solid var(--line);border-radius:14px;overflow:hidden;
+    background:var(--panel);}
+  .day-head{display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:14px 15px;cursor:pointer;background:linear-gradient(90deg,#2a2419,#1d1916);}
+  .day-title{font-family:"Barlow Condensed",sans-serif;font-weight:700;font-size:19px;
+    letter-spacing:.01em;}
+  .day-sub{font-size:11px;color:var(--dim2);font-weight:500;margin-top:1px;}
+  .chev{color:var(--dim2);font-size:13px;transition:.2s;}
+  .day.open .chev{transform:rotate(90deg);color:var(--amber);}
+  .day-body{display:none;border-top:1px solid var(--line);}
+  .day.open .day-body{display:block;}
+
+  .grp{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--amber-d);
+    font-weight:700;padding:11px 15px 5px;}
+
+  .ex{padding:9px 13px 11px;border-top:1px solid #2a2420;}
+  .ex:first-of-type{border-top:none;}
+  .ex-top{display:flex;align-items:flex-start;gap:11px;}
+  .check{flex:0 0 26px;height:26px;margin-top:1px;border-radius:8px;border:2px solid var(--line);
+    background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;
+    transition:.15s;font-size:15px;color:transparent;}
+  .check.done{background:var(--green);border-color:var(--green);color:#10260c;}
+  .ex-name{flex:1;font-size:15px;font-weight:600;line-height:1.25;}
+  .ex.done .ex-name{color:var(--dim2);text-decoration:line-through;}
+  .ex-rx{flex:0 0 auto;font-size:11px;color:var(--dim2);text-align:right;line-height:1.3;
+    font-variant-numeric:tabular-nums;}
+  .ex-rx b{display:block;color:var(--amber);font-size:13px;font-weight:700;}
+
+  .wt{display:flex;align-items:center;gap:8px;margin:9px 0 0 37px;}
+  .wt label{font-size:11px;color:var(--dim2);}
+  .wt input{width:78px;background:var(--panel2);border:1px solid var(--line);color:var(--ink);
+    border-radius:8px;padding:7px 9px;font-size:14px;font-weight:600;text-align:center;
+    font-variant-numeric:tabular-nums;}
+  .wt input:focus{outline:none;border-color:var(--amber);}
+  .wt .unit{font-size:11px;color:var(--dim2);}
+
+  .info{border:1px dashed var(--line);border-radius:12px;padding:13px 15px;margin:6px 0 20px;
+    background:var(--panel);}
+  .info h3{font-family:"Barlow Condensed",sans-serif;font-size:15px;letter-spacing:.04em;
+    text-transform:uppercase;color:var(--amber);margin:0 0 8px;}
+  .info li{font-size:12.5px;color:var(--dim);line-height:1.55;margin-bottom:5px;list-style:none;
+    padding-left:14px;position:relative;}
+  .info li:before{content:"›";position:absolute;left:0;color:var(--amber-d);font-weight:700;}
+
+  table.cal{width:100%;border-collapse:collapse;margin:4px 0 8px;font-size:13px;}
+  .cal th{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim2);
+    text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);font-weight:700;}
+  .cal td{padding:9px;border-bottom:1px solid #2a2420;}
+  .cal td:first-child{font-weight:600;}
+  .cal .rest{color:var(--red);font-weight:700;letter-spacing:.04em;}
+  .pill{display:inline-block;padding:2px 9px;border-radius:20px;font-size:11px;font-weight:700;}
+  .p-push{background:#3a2a18;color:var(--amber);}
+  .p-pull{background:#1f3326;color:var(--green);}
+  .p-legs{background:#33231f;color:#d98a6a;}
+
+  .bar{position:fixed;left:0;right:0;bottom:0;background:rgba(20,17,15,.95);
+    backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:9px 14px;z-index:30;}
+  .bar-in{max-width:560px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+  .prog{flex:1;}
+  .prog-track{height:7px;background:var(--panel2);border-radius:10px;overflow:hidden;}
+  .prog-fill{height:100%;width:0;background:linear-gradient(90deg,var(--amber-d),var(--amber));
+    border-radius:10px;transition:.3s;}
+  .prog-txt{font-size:11px;color:var(--dim2);margin-top:4px;font-variant-numeric:tabular-nums;}
+  .reset{background:var(--panel2);border:1px solid var(--line);color:var(--dim);
+    padding:9px 13px;border-radius:9px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;}
+  .reset:active{background:#2e2820;}
+  .saved{font-size:11px;color:var(--green);opacity:0;transition:.3s;}
+  .saved.show{opacity:1;}
+  .loading{text-align:center;color:var(--dim2);padding:40px;font-size:13px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">Mancuernas + Banco</div>
+    <h1 id="ttl">Mi Rutina</h1>
+  </header>
+
+  <div class="tabs" id="tabs"></div>
+  <div id="content"><div class="loading">Cargando tus datos…</div></div>
+</div>
+
+<div class="bar">
+  <div class="bar-in">
+    <div class="prog">
+      <div class="prog-track"><div class="prog-fill" id="pf"></div></div>
+      <div class="prog-txt" id="pt">0 de 0 series marcadas</div>
+    </div>
+    <span class="saved" id="saved">guardado ✓</span>
+    <button class="reset" id="reset">Limpiar día</button>
+  </div>
+</div>
+
+<script>
+const DATA = {
+  ul: {
+    name:"Arriba/Abajo",
+    meta:"Construir músculo · 4 días/sem · cada parte del cuerpo 2 veces · Mancuernas + banco.",
+    cal:[
+      ["Miércoles","push","Arriba","push","Arriba"],
+      ["Jueves","legs","Abajo","legs","Abajo"],
+      ["Viernes","rest","Descanso","rest","Descanso"],
+      ["Sábado","push","Arriba","push","Arriba"],
+      ["Domingo","legs","Abajo","legs","Abajo"],
+    ],
+    days:[
+      {t:"Arriba (Tren Superior)",s:"Pecho · espalda · hombros · brazos · Mié y Sáb",g:[
+        {n:"Pecho",ex:[
+          ["Press de pecho con mancuernas","3-4","8-12"],
+          ["Aperturas (flye)","3","10-12"],
+        ]},
+        {n:"Espalda",ex:[
+          ["Remo inclinado con mancuerna (1 brazo)","3-4","8-12"],
+          ["Pullover con mancuerna","3","10-12"],
+        ]},
+        {n:"Hombros",ex:[
+          ["Press de hombros (o Arnold Press)","3-4","8-12"],
+          ["Elevaciones laterales","3","12-15"],
+        ]},
+        {n:"Brazos",ex:[
+          ["Curl de bíceps","3","10-12"],
+          ["Extensión de tríceps sobre la cabeza","3","10-12"],
+        ]},
+      ]},
+      {t:"Abajo (Tren Inferior)",s:"Piernas · glúteo · femoral · gemelo · abs · Jue y Dom",g:[
+        {n:"Piernas",ex:[
+          ["Sentadilla goblet","3-4","8-12"],
+          ["Zancadas (lunge)","3","10-12 x lado"],
+          ["Peso muerto a una pierna","3","10-12 x lado"],
+        ]},
+        {n:"Femoral / Glúteo",ex:[
+          ["Puente de glúteo con mancuerna","3","12-15"],
+          ["Peso muerto rumano con mancuernas","3","10-12"],
+        ]},
+        {n:"Pantorrillas",ex:[
+          ["Elevación de gemelos","4","15-20"],
+        ]},
+        {n:"Abdomen",ex:[
+          ["Plancha","3","30-60 s"],
+          ["Crunch / elevación de piernas","3","12-15"],
+        ]},
+      ]},
+    ],
+    info:["Entrenas 4 días: Arriba y Abajo, cada uno dos veces por semana.",
+      "Siempre los mismos días: nada que rotar, nada que pensar.",
+      "Descansa 60-90 s entre series.",
+      "Sube de peso cuando llegues cómodo al tope de reps (si dice 8-12 y haces 12 fácil, sube).",
+      "Empieza con un peso que te deje 2-3 reps de margen para aprender la técnica.",
+      "Si te falta equipo para algún ejercicio, avísame y lo cambiamos."]
+  },
+  ppl: {
+    name:"Dumbbell PPL",
+    meta:"Hipertrofia · 4 días/sem · 3 series · máx 12 reps · 90 s descanso. Fuente: r/Fitness Wiki.",
+    cal:[
+      ["Miércoles","push","Push","legs","Legs"],
+      ["Jueves","pull","Pull","push","Push"],
+      ["Viernes","rest","Descanso","rest","Descanso"],
+      ["Sábado","legs","Legs","pull","Pull"],
+      ["Domingo","push","Push","legs","Legs"],
+    ],
+    days:[
+      {t:"Empuje (Push)",s:"Pecho · hombros · tríceps",g:[
+        {n:null,ex:[
+          ["Press de pecho con mancuernas","3","máx 12"],
+          ["Aperturas inclinadas (flye) *","3","máx 12"],
+          ["Arnold Press","3","máx 12"],
+          ["Extensión de tríceps sobre la cabeza","3","máx 12"],
+        ]}
+      ]},
+      {t:"Jalón (Pull)",s:"Espalda · bíceps · deltoide post.",g:[
+        {n:null,ex:[
+          ["Dominadas (pull-up)","3","máx"],
+          ["Remo inclinado con mancuerna (1 brazo)","3","máx 12"],
+          ["Aperturas invertidas (reverse flye)","3","máx 12"],
+          ["Encogimientos de hombros (shrug)","3","máx 12"],
+          ["Curl de bíceps","3","máx 12"],
+        ]}
+      ]},
+      {t:"Pierna (Legs)",s:"Cuádriceps · glúteo · femoral · gemelo",g:[
+        {n:null,ex:[
+          ["Sentadilla goblet","3","máx 12"],
+          ["Zancadas (lunge)","3","máx 12"],
+          ["Peso muerto a una pierna","3","máx 12"],
+          ["Elevación de gemelos","3","máx 12"],
+          ["Elevación de piernas colgado (abs) ·  cada 2do entreno","3","máx"],
+        ]}
+      ]},
+    ],
+    info:["Esquema: Push → Pull → Legs corriendo sin parar, viernes libre.",
+      "Máx reps posibles por serie, nunca más de 12.",
+      "Si logras 3×12 en un ejercicio: sube de peso el próximo entreno.",
+      "Estancado 3 entrenos seguidos: baja 2 incrementos y vuelve a subir.",
+      "Dominadas: empieza con peso corporal; suma una mancuerna entre los pies.",
+      "* Solo banco plano: cambia aperturas inclinadas por aperturas planas.",
+      "Goblet muy fácil: pasa a sentadilla búlgara o pistol."]
+  },
+  av1:{
+    name:"Arnold V1",
+    meta:"Construir músculo · Avanzado · 16 semanas · 6 días/sem · 60-75 min.",
+    days:[
+      {t:"Días 1 y 4",s:"Pecho y Espalda",g:[
+        {n:"Pecho",ex:[["Press de banca","3-4","10"],["Press inclinado","3-4","10"],["Pullover con mancuerna","3-4","10"]]},
+        {n:"Espalda",ex:[["Dominadas (chin up)","3-4","10"],["Remo inclinado","3-4","10"],["Peso muerto","3-4","10"]]},
+        {n:"Abdominales",ex:[["Crunches","5","25"]]},
+      ]},
+      {t:"Días 2 y 5",s:"Hombros y Brazos",g:[
+        {n:"Hombros",ex:[["Clean and press con barra","3-4","10"],["Elevaciones laterales","3-4","10"],["Remo al mentón","3-4","10"],["Press militar","3-4","10"]]},
+        {n:"Brazos",ex:[["Curl con barra de pie","3-4","10"],["Curl con mancuerna sentado","3-4","10"],["Press agarre cerrado","3-4","10"],["Extensión de tríceps con barra","3-4","10"]]},
+        {n:"Antebrazos",ex:[["Curl de muñeca","3-4","10"],["Curl de muñeca inverso","3-4","10"]]},
+        {n:"Abdominales",ex:[["Crunch inverso","5","25"]]},
+      ]},
+      {t:"Días 3 y 6",s:"Piernas y Espalda Baja",g:[
+        {n:"Piernas",ex:[["Sentadilla","3-4","10"],["Zancadas","3-4","10"],["Curl femoral","3-4","10"]]},
+        {n:"Espalda baja",ex:[["Peso muerto pierna rígida","3-4","10"],["Buenos días","3-4","10"]]},
+        {n:"Pantorrillas",ex:[["Elevación de talones de pie","3-4","10"]]},
+        {n:"Abdominales",ex:[["Crunches","5","25"]]},
+      ]},
+    ]
+  },
+  av2:{
+    name:"Arnold V2",
+    meta:"Alto volumen clásico · Avanzado · 16 semanas · 6 días/sem.",
+    days:[
+      {t:"Días 1, 3 y 5",s:"Pecho, Espalda y Piernas",g:[
+        {n:"Pecho",ex:[["Press de banca","5","6-10"],["Aperturas con mancuerna","5","6-10"],["Press inclinado","6","6-10"],["Cruces en polea","6","10-12"],["Fondos (dips)","5","Fallo"],["Pullover con mancuerna","5","10-12"]]},
+        {n:"Espalda",ex:[["Dominadas agarre ancho","6","Fallo"],["Remo en T","5","6-10"],["Remo en polea sentado","6","6-10"],["Remo a una mano","5","6-10"],["Peso muerto pierna rígida","6","15"]]},
+        {n:"Piernas",ex:[["Sentadilla","6","8-12"],["Prensa de piernas","6","8-12"],["Extensión de cuádriceps","6","12-15"],["Curl femoral","6","10-15"],["Zancadas con barra","5","15"]]},
+        {n:"Pantorrillas",ex:[["Elevación talones de pie","10","10"],["Elevación talones sentado","8","15"],["Talón 1 pierna con mancuerna","6","12"]]},
+        {n:"Antebrazos",ex:[["Curl de muñeca","4","10"],["Curl inverso con barra","4","8"],["Rodillo de muñeca","4","Fallo"]]},
+        {n:"Abdominales",ex:[["Abdominales sin parar","30 min","Instinto"]]},
+      ]},
+      {t:"Días 2, 4 y 6",s:"Hombros y Brazos",g:[
+        {n:"Bíceps",ex:[["Curl con barra","6","6-10"],["Curl con mancuerna sentado","6","6-10"],["Curl concentrado","6","6-10"]]},
+        {n:"Tríceps",ex:[["Press agarre cerrado","6","6-10"],["Tríceps en polea (pushdown)","6","6-10"],["Press francés con barra","6","6-10"],["Extensión tríceps 1 mano","6","6-10"]]},
+        {n:"Hombros",ex:[["Press de barra sentado","6","6-10"],["Elevaciones laterales","6","6-10"],["Laterales deltoide post.","5","6-10"],["Elevaciones laterales en polea","5","10-12"]]},
+        {n:"Pantorrillas",ex:[["Elevación talones de pie","10","10"],["Elevación talones sentado","8","15"],["Talón 1 pierna con mancuerna","6","12"]]},
+        {n:"Antebrazos",ex:[["Curl de muñeca","4","10"],["Curl inverso con barra","4","8"],["Rodillo de muñeca","4","Fallo"]]},
+        {n:"Abdominales",ex:[["Abdominales sin parar","30 min","Instinto"]]},
+      ]},
+    ]
+  }
+};
+
+let state = {}; // {exId:{done:bool,wt:str}}
+let cur = "ul";
+let curDay = 0;
+let saveTimer = null;
+
+function exId(routine, di, name){ return routine+"|"+di+"|"+name; }
+
+async function loadState(){
+  try{
+    const v = localStorage.getItem("gymstate");
+    if(v) state = JSON.parse(v);
+  }catch(e){ state = {}; }
+}
+function saveState(){
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(()=>{
+    try{
+      localStorage.setItem("gymstate", JSON.stringify(state));
+      const s = document.getElementById("saved");
+      s.classList.add("show"); setTimeout(()=>s.classList.remove("show"),1200);
+    }catch(e){}
+  }, 400);
+}
+
+function renderTabs(){
+  const t = document.getElementById("tabs");
+  t.innerHTML = "";
+  Object.keys(DATA).forEach(k=>{
+    const b = document.createElement("div");
+    b.className = "tab"+(k===cur?" on":"");
+    b.textContent = DATA[k].name;
+    b.onclick = ()=>{ cur=k; curDay=0; render(); };
+    t.appendChild(b);
+  });
+}
+
+function render(){
+  renderTabs();
+  const R = DATA[cur];
+  let ttl;
+  if(R.name==="Dumbbell PPL") ttl = 'Dumbbell <span>PPL</span>';
+  else if(R.name==="Arriba/Abajo") ttl = 'Arriba<span>/Abajo</span>';
+  else ttl = R.name.replace("Arnold","Arnold <span>")+"</span>";
+  document.getElementById("ttl").innerHTML = ttl;
+  const c = document.getElementById("content");
+  let h = `<div class="meta">${R.meta}</div>`;
+
+  if(R.cal){
+    h += `<table class="cal"><tr><th>Día</th><th>Semana A</th><th>Semana B</th></tr>`;
+    R.cal.forEach(row=>{
+      const cell = (cls,lbl)=> cls==="rest"
+        ? `<span class="rest">${lbl}</span>`
+        : `<span class="pill p-${cls}">${lbl}</span>`;
+      h += `<tr><td>${row[0]}</td><td>${cell(row[1],row[2])}</td><td>${cell(row[3],row[4])}</td></tr>`;
+    });
+    h += `</table>`;
+  }
+
+  R.days.forEach((d,di)=>{
+    const open = di===curDay;
+    h += `<div class="day${open?" open":""}" data-di="${di}">
+      <div class="day-head" onclick="toggleDay(${di})">
+        <div><div class="day-title">${d.t}</div><div class="day-sub">${d.s}</div></div>
+        <div class="chev">▶</div>
+      </div><div class="day-body">`;
+    d.g.forEach(g=>{
+      if(g.n) h += `<div class="grp">${g.n}</div>`;
+      g.ex.forEach(e=>{
+        const id = exId(cur,di,e[0]);
+        const st = state[id]||{};
+        h += `<div class="ex${st.done?" done":""}" data-id="${id}">
+          <div class="ex-top">
+            <div class="check${st.done?" done":""}" onclick="toggle('${id.replace(/'/g,"\\'")}')">✓</div>
+            <div class="ex-name">${e[0]}</div>
+            <div class="ex-rx">${e[1]} series<b>${e[2]}</b></div>
+          </div>
+          <div class="wt">
+            <label>Peso:</label>
+            <input type="text" inputmode="decimal" placeholder="—" value="${st.wt||""}"
+              oninput="setWt('${id.replace(/'/g,"\\'")}',this.value)">
+            <span class="unit">kg</span>
+          </div>
+        </div>`;
+      });
+    });
+    h += `</div></div>`;
+  });
+
+  if(R.info){
+    h += `<div class="info"><h3>Cómo entrenar</h3><ul>`;
+    R.info.forEach(i=> h += `<li>${i}</li>`);
+    h += `</ul></div>`;
+  }
+
+  c.innerHTML = h;
+  updateProg();
+}
+
+function toggleDay(di){ curDay = (curDay===di? -1 : di); render(); }
+
+function toggle(id){
+  state[id] = state[id]||{};
+  state[id].done = !state[id].done;
+  saveState();
+  const ex = document.querySelector(`.ex[data-id="${cssEsc(id)}"]`);
+  const chk = ex.querySelector(".check");
+  ex.classList.toggle("done", state[id].done);
+  chk.classList.toggle("done", state[id].done);
+  updateProg();
+}
+function setWt(id,v){
+  state[id] = state[id]||{};
+  state[id].wt = v;
+  saveState();
+}
+function cssEsc(s){ return s.replace(/"/g,'\\"'); }
+
+function updateProg(){
+  const R = DATA[cur];
+  let total=0, done=0;
+  R.days.forEach((d,di)=> d.g.forEach(g=> g.ex.forEach(e=>{
+    total++; const st=state[exId(cur,di,e[0])]; if(st&&st.done) done++;
+  })));
+  const pct = total? Math.round(done/total*100):0;
+  document.getElementById("pf").style.width = pct+"%";
+  document.getElementById("pt").textContent = `${done} de ${total} ejercicios marcados · ${pct}%`;
+}
+
+document.getElementById("reset").onclick = ()=>{
+  const R = DATA[cur];
+  if(curDay<0 || curDay>=R.days.length){ return; }
+  R.days[curDay].g.forEach(g=> g.ex.forEach(e=>{
+    const id = exId(cur,curDay,e[0]);
+    if(state[id]) state[id].done = false;
+  }));
+  saveState(); render();
+};
+
+(async function(){
+  await loadState();
+  render();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,375 @@
+import type { WorkoutData } from "./types"
+
+export const workoutData: WorkoutData = {
+  1: {
+    title: "MIÉRCOLES",
+    subtitle: "Empuje (Pecho / Hombro / Tríceps)",
+    dayOfWeek: 1,
+    warmup: "5–10 min de cardio ligero + movilidad de hombros y escápulas. 2 series livianas de press para activar.",
+    stretching: "Pectoral en puerta 30s + deltoide cruzado 20s + tríceps tras nuca 20s c/u.",
+    groups: [
+      {
+        name: "PECHO",
+        muscleGroup: "chest",
+        exercises: [
+          {
+            name: "Press banca barra/mancuernas",
+            sets: "4 x 6-8",
+            rest: "120s",
+            notes: "Movimiento principal de fuerza. Baja controlado al pecho, empuja explosivo. Retracción escapular.",
+            type: "Compuesto",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/bench-press/bench-press-800.jpg",
+          },
+          {
+            name: "Press inclinado en banco",
+            sets: "4 x 8-10",
+            rest: "90s",
+            notes: "Banco a 30°. Enfocado en pecho superior, baja hasta sentir el estiramiento.",
+            type: "Compuesto",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/incline-dumbbell-bench-press/incline-dumbbell-bench-press-800.jpg",
+          },
+          {
+            name: "Aperturas en banco",
+            sets: "3 x 12",
+            rest: "60s",
+            notes: "Aislamiento del pecho. Codos semi-flexionados, foco en estiramiento y contracción.",
+            type: "Aislado",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-fly/dumbbell-fly-800.jpg",
+          },
+        ],
+      },
+      {
+        name: "HOMBRO",
+        muscleGroup: "shoulders",
+        exercises: [
+          {
+            name: "Press militar (sentado en banco)",
+            sets: "4 x 8-10",
+            rest: "120s",
+            notes: "Espalda apoyada, core firme. Empuja hasta extensión completa sin bloquear de golpe.",
+            type: "Compuesto",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/seated-dumbbell-shoulder-press/seated-dumbbell-shoulder-press-800.jpg",
+          },
+          {
+            name: "Elevaciones laterales",
+            sets: "4 x 12-15",
+            rest: "45s",
+            notes: "Deltoide lateral. Codos ligeramente flexionados, sube hasta la altura del hombro sin impulso.",
+            type: "Aislado",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-lateral-raise/dumbbell-lateral-raise-800.jpg",
+          },
+          {
+            name: "Pájaros / face pulls",
+            sets: "3 x 15",
+            rest: "45s",
+            notes: "Deltoide posterior y manguito rotador. Tira con codos altos, aprieta escápulas.",
+            type: "Aislado",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/face-pull/face-pull-800.jpg",
+          },
+        ],
+      },
+      {
+        name: "TRÍCEPS",
+        muscleGroup: "arms",
+        exercises: [
+          {
+            name: "Fondos entre bancos",
+            sets: "4 x 10-12",
+            rest: "75s",
+            notes: "Codos hacia atrás, baja controlado. Suma disco en las piernas si te resulta fácil.",
+            type: "Compuesto",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/bench-dips/bench-dips-800.jpg",
+          },
+          {
+            name: "Extensión sobre cabeza",
+            sets: "4 x 10-12",
+            rest: "60s",
+            notes: "Estiramiento profundo de la cabeza larga. Codos apuntando arriba, control en la bajada.",
+            type: "Aislado",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-tricep-extension/dumbbell-tricep-extension-800.jpg",
+          },
+          {
+            name: "Patada con mancuerna",
+            sets: "3 x 12",
+            rest: "45s",
+            notes: "Torso inclinado, codo fijo. Extiende completo y aprieta 1s arriba.",
+            type: "Aislado",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-tricep-kickback/dumbbell-tricep-kickback-800.jpg",
+          },
+        ],
+      },
+    ],
+  },
+
+  2: {
+    title: "JUEVES",
+    subtitle: "Tracción (Espalda / Hombro post. / Bíceps)",
+    dayOfWeek: 2,
+    warmup: "5 min de remo o cardio + activación de dorsales con banda. 2 series livianas de jalón.",
+    stretching: "Dorsal colgado de la barra 30s + bíceps en pared 20s + deltoide posterior cruzado 20s.",
+    groups: [
+      {
+        name: "ESPALDA",
+        muscleGroup: "back",
+        exercises: [
+          {
+            name: "Remo con barra",
+            sets: "4 x 6-8",
+            rest: "120s",
+            notes: "Torso a 45°, espalda neutra. Lleva la barra al abdomen y aprieta escápulas.",
+            type: "Compuesto",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/bent-over-row/bent-over-row-800.jpg",
+          },
+          {
+            name: "Remo a una mano con mancuerna",
+            sets: "4 x 8-10",
+            rest: "90s",
+            notes: "Unilateral, apoyado en banco. Rango completo, tira con el codo pegado.",
+            type: "Compuesto",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-row/dumbbell-row-800.jpg",
+          },
+          {
+            name: "Dominadas / jalón",
+            sets: "4 x 8-12",
+            rest: "90s",
+            notes: "Si no llegas a las reps, usa banda o jalón al pecho. Pecho hacia la barra.",
+            type: "Compuesto",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/pull-ups/pull-ups-800.jpg",
+          },
+          {
+            name: "Pullover en banco",
+            sets: "3 x 12",
+            rest: "60s",
+            notes: "Estiramiento profundo de dorsales. Brazos semi-flexionados, control en el rango.",
+            type: "Aislado",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-pullover/dumbbell-pullover-800.jpg",
+          },
+        ],
+      },
+      {
+        name: "HOMBRO (deltoide posterior)",
+        muscleGroup: "shoulders",
+        exercises: [
+          {
+            name: "Pájaros con mancuerna",
+            sets: "3 x 15",
+            rest: "45s",
+            notes: "Inclinado hacia adelante. Codos ligeramente flexionados, foco en deltoide posterior.",
+            type: "Aislado",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-reverse-fly/dumbbell-reverse-fly-800.jpg",
+          },
+        ],
+      },
+      {
+        name: "BÍCEPS",
+        muscleGroup: "arms",
+        exercises: [
+          {
+            name: "Curl con barra",
+            sets: "4 x 8-10",
+            rest: "60s",
+            notes: "Codos fijos al costado, sin balanceo. Contracción completa arriba.",
+            type: "Aislado",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/barbell-curl/barbell-curl-800.jpg",
+          },
+          {
+            name: "Curl inclinado en banco",
+            sets: "3 x 10-12",
+            rest: "60s",
+            notes: "Banco a 45°, brazos colgando. Máximo estiramiento de la cabeza larga del bíceps.",
+            type: "Aislado",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/incline-dumbbell-curl/incline-dumbbell-curl-800.jpg",
+          },
+          {
+            name: "Curl martillo",
+            sets: "3 x 12",
+            rest: "45s",
+            notes: "Agarre neutro (palmas enfrentadas). Trabaja braquial y antebrazo.",
+            type: "Aislado",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/hammer-curl/hammer-curl-800.jpg",
+          },
+        ],
+      },
+    ],
+  },
+
+  3: {
+    title: "VIERNES",
+    subtitle: "Pierna (pesado/ligero, alterna con domingo)",
+    dayOfWeek: 3,
+    warmup: "5–10 min de bici + movilidad de cadera y tobillo. 2 series de sentadilla con peso corporal.",
+    stretching: "Cuádriceps de pie 30s + isquios tocando punta de pie 30s + gemelo en pared 20s.",
+    groups: [
+      {
+        name: "CUÁDRICEPS",
+        muscleGroup: "legs",
+        exercises: [
+          {
+            name: "Sentadilla con barra",
+            sets: "4 x 6-8",
+            rest: "150s",
+            notes: "Profundidad bajo paralelo, rodillas siguiendo la punta del pie. Core firme.",
+            type: "Compuesto",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/squat/squat-800.jpg",
+          },
+          {
+            name: "Zancadas con mancuernas",
+            sets: "3 x 10",
+            rest: "90s",
+            notes: "10 por pierna. Tronco erguido, rodilla casi al suelo. Paso largo para foco en glúteo.",
+            type: "Compuesto",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-lunge/dumbbell-lunge-800.jpg",
+          },
+        ],
+      },
+      {
+        name: "FEMORAL / GLÚTEO",
+        muscleGroup: "legs",
+        exercises: [
+          {
+            name: "Peso muerto rumano",
+            sets: "4 x 8-10",
+            rest: "120s",
+            notes: "Bisagra de cadera, espalda neutra. Baja hasta sentir estiramiento de isquios.",
+            type: "Compuesto",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/romanian-deadlift/romanian-deadlift-800.jpg",
+          },
+          {
+            name: "Búlgaras (pie en banco)",
+            sets: "3 x 10",
+            rest: "90s",
+            notes: "10 por pierna. Pie trasero en el banco, baja controlado. Foco en glúteo y cuádriceps.",
+            type: "Compuesto",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/bulgarian-split-squat/bulgarian-split-squat-800.jpg",
+          },
+          {
+            name: "Hip thrust en banco con barra",
+            sets: "4 x 10-12",
+            rest: "90s",
+            notes: "Espalda apoyada en el banco, empuja con los talones. Aprieta el glúteo 1s arriba.",
+            type: "Compuesto",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/hip-thrust/hip-thrust-800.jpg",
+          },
+        ],
+      },
+      {
+        name: "GEMELO",
+        muscleGroup: "legs",
+        exercises: [
+          {
+            name: "Elevación de gemelos",
+            sets: "4 x 15-20",
+            rest: "45s",
+            notes: "Rango completo, pausa arriba y abajo. Estira bien en la parte baja.",
+            type: "Aislado",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-calf-raise/dumbbell-calf-raise-800.jpg",
+          },
+        ],
+      },
+    ],
+  },
+
+  4: {
+    title: "SÁBADO",
+    subtitle: "Torso + Brazo (volumen)",
+    dayOfWeek: 4,
+    warmup: "5 min cardio + movilidad de hombros, codos y muñecas. Series de aproximación livianas.",
+    stretching: "Pectoral en puerta 30s + dorsal colgado 30s + bíceps y tríceps 20s c/u.",
+    groups: [
+      {
+        name: "PECHO",
+        muscleGroup: "chest",
+        exercises: [
+          {
+            name: "Press inclinado mancuernas",
+            sets: "4 x 10",
+            rest: "90s",
+            notes: "Banco a 30°. Mayor rango que la barra, baja hasta sentir el estiramiento.",
+            type: "Compuesto",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/incline-dumbbell-bench-press/incline-dumbbell-bench-press-800.jpg",
+          },
+        ],
+      },
+      {
+        name: "ESPALDA",
+        muscleGroup: "back",
+        exercises: [
+          {
+            name: "Remo mancuerna",
+            sets: "4 x 10",
+            rest: "90s",
+            notes: "Apoyado en banco. Tira con el codo pegado, aprieta la escápula arriba.",
+            type: "Compuesto",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-row/dumbbell-row-800.jpg",
+          },
+        ],
+      },
+      {
+        name: "HOMBRO",
+        muscleGroup: "shoulders",
+        exercises: [
+          {
+            name: "Press hombro sentado",
+            sets: "3 x 12",
+            rest: "75s",
+            notes: "Espalda apoyada, core firme. Empuja hasta extensión completa.",
+            type: "Compuesto",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/seated-dumbbell-shoulder-press/seated-dumbbell-shoulder-press-800.jpg",
+          },
+          {
+            name: "Elevaciones laterales",
+            sets: "3 x 15",
+            rest: "45s",
+            notes: "Deltoide lateral. Sube hasta la altura del hombro sin impulso.",
+            type: "Aislado",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/dumbbell-lateral-raise/dumbbell-lateral-raise-800.jpg",
+          },
+        ],
+      },
+      {
+        name: "BÍCEPS",
+        muscleGroup: "arms",
+        exercises: [
+          {
+            name: "Curl barra",
+            sets: "3 x 10",
+            rest: "60s",
+            notes: "Codos fijos, sin balanceo. Contracción completa arriba.",
+            type: "Aislado",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/barbell-curl/barbell-curl-800.jpg",
+          },
+          {
+            name: "Curl martillo",
+            sets: "3 x 12",
+            rest: "45s",
+            notes: "Agarre neutro. Trabaja braquial y antebrazo.",
+            type: "Aislado",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/hammer-curl/hammer-curl-800.jpg",
+          },
+        ],
+      },
+      {
+        name: "TRÍCEPS",
+        muscleGroup: "arms",
+        exercises: [
+          {
+            name: "Extensión tríceps",
+            sets: "4 x 12",
+            rest: "60s",
+            notes: "En polea o mancuerna. Codos pegados al cuerpo, extiende completo.",
+            type: "Aislado",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/tricep-pushdown/tricep-pushdown-800.jpg",
+          },
+          {
+            name: "Press francés (skull crusher en banco)",
+            sets: "3 x 10-12",
+            rest: "60s",
+            notes: "Acostado en banco, baja la barra/mancuernas hacia la frente. Codos fijos.",
+            type: "Aislado",
+            imageUrl: "https://static.strengthlevel.com/images/exercises/lying-tricep-extension/lying-tricep-extension-800.jpg",
+          },
+        ],
+      },
+    ],
+  },
+}
